@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".water.DayWaterFragment">
+
+    <RelativeLayout
+        android:id="@+id/day_picker_area"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        >
+
+        <ImageView
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_chevron_left_black_24dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/picker_background"
+            />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:background="@drawable/water_day_pick_background"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            />
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_chevron_right_black_24dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/picker_background"
+            />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/water_animation"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/water_cup_background"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/day_picker_area"
+        >
+
+        <org.secuso.privacyfriendlyactivitytracker.utils.WaveView
+            android:id="@+id/water_change"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="26dp"
+            android:padding="100dp"
+            app:borderWidthSize="10dp"
+            app:shapeType="square"
+            app:textHidden="true"
+            app:animatorEnable="true"
+            />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/water_change_area"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/water_animation"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        >
+
+        <ImageView
+            android:id="@+id/water_decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_decrease"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            >
+
+            <TextView
+                android:id="@+id/glasses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/water_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_increase"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/glass_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="@string/glasses"
+        android:layout_below="@+id/water_change_area"
+        />
+
+    <TextView
+        android:id="@+id/total_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/glass_text"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:background="@color/divider_color"
+        android:paddingStart="@dimen/layout_margin_h"
+        android:paddingEnd="@dimen/layout_margin_h"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/progress_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="@string/daily_water_intake" />
+
+            <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
+                android:id="@+id/water_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:maxHeight="15dp"
+                android:minHeight="15dp"
+                android:progress="0"
+                app:backgroundColor="#ECECEC"
+                app:progressColor="@android:color/holo_blue_light" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/set_target_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/water_track_desc"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/set_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="@string/set_target"
+            android:textSize="15sp"
+            android:textColor="@color/light_blue"
+            android:textStyle="bold"
+            android:background="@drawable/ripple_round_effect"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

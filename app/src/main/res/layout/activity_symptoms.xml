@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".cycle.SymptomsActivity">
+
+    <include android:id="@+id/toolbar_area"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/flow_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:text="@string/flow"
+            android:textColor="@color/black"/>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/flows"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/flow_light"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/flow_intensity_light"
+                android:textOff="@string/flow_intensity_light"
+                app:checkedColor="@color/toggle_button_checked_color"
+                />
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/flow_average"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/flow_intensity_average"
+                android:textOff="@string/flow_intensity_average"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/flow_heavy"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/flow_intensity_heavy"
+                android:textOff="@string/flow_intensity_heavy"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pain_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:text="@string/pain"
+            android:textColor="@color/black"/>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/pains"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/pain_light"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/pain_intensity_light"
+                android:textOff="@string/pain_intensity_light"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/pain_average"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/pain_intensity_average"
+                android:textOff="@string/pain_intensity_average"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/pain_severe"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/pain_intensity_severe"
+                android:textOff="@string/pain_intensity_severe"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/condition_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:text="@string/physical_conditions"
+            android:textColor="@color/black"/>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/conditions"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            app:columnCount="3"
+            app:rowCount="3">
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/cramps"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/cramps"
+                android:textOff="@string/cramps"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/breast_pain"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="12sp"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/breast_pain"
+                android:textOff="@string/breast_pain"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/headache"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/headache"
+                android:textOff="@string/headache"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/dizziness"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/dizziness"
+                android:textOff="@string/dizziness"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/acne"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/acne"
+                android:textOff="@string/acne"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/back_pain"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/back_pain"
+                android:textOff="@string/back_pain"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/nausea"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/nausea"
+                android:textOff="@string/nausea"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/tiredness"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/tiredness"
+                android:textOff="@string/tiredness"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+            <me.rishabhkhanna.customtogglebutton.CustomToggleButton
+                android:id="@+id/bloating"
+                style="@style/SymptomsItemStyle"
+                android:textOn="@string/bloating"
+                android:textOff="@string/bloating"
+                app:checkedColor="@color/toggle_button_checked_color"/>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

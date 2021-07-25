@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".weight.WeightActivity">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_area"
+        android:layout_below="@+id/appbar"
+        android:layout_above="@+id/bottom_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottom_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/divider_color"
+        android:paddingStart="@dimen/layout_margin_h"
+        android:paddingEnd="@dimen/layout_margin_h"
+        >
+
+        <LinearLayout
+            android:id="@+id/add_record"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/bottom_area_padding"
+            android:paddingBottom="@dimen/bottom_area_padding"
+            android:background="@drawable/picker_background"
+            android:onClick="onClick"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_notes" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_record"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bottom_area_text_size"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/history"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/bottom_area_padding"
+            android:paddingBottom="@dimen/bottom_area_padding"
+            android:background="@drawable/picker_background"
+            android:onClick="onClick"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_history" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/history"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bottom_area_text_size"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

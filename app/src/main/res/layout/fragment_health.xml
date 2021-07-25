@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.HealthFragment">
+
+    <FrameLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progress"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                style="@style/AVLoadingIndicatorView"
+                android:visibility="visible"
+                app:indicatorName="BallSpinFadeLoaderIndicator"
+                app:indicatorColor="@android:color/holo_blue_dark"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/loading" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/shadow_background"
+                    android:scaleY="1.1"
+                    android:scaleX="1.03"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/main_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    >
+
+                    <org.secuso.privacyfriendlyactivitytracker.utils.CustomCirclePercentBar
+                        android:id="@+id/circle_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        app:arcColor="@color/white"
+                        app:arcWidth="16dp"
+                        app:circleRadius="60dp"
+                        app:centerTextSize="20sp"
+                        app:centerTextColor="@android:color/white"
+                        app:arcStartColor="@android:color/white"
+                        app:arcEndColor="@android:color/white"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_margin="20dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="20dp"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:src="@drawable/ic_transfer_within_a_station_65white_30px" />
+
+                            <TextView
+                                android:id="@+id/distance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/white" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="20dp"
+                                android:src="@drawable/ic_fire_65white_40dp" />
+
+                            <TextView
+                                android:id="@+id/calorie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/white" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/health_item_container"
+                style="@style/MainItemContainerStyle"
+                app:columnCount="2"
+                >
+
+                <include
+                    android:id="@+id/main_weight"
+                    layout="@layout/main_item_weight"
+                    style="@style/MainItemStyle"
+                    />
+
+                <include
+                    android:id="@+id/main_exercise"
+                    layout="@layout/main_item_exercise"
+                    style="@style/MainItemStyle"
+                    />
+
+                <include
+                    android:id="@+id/main_blood_pressure"
+                    layout="@layout/main_item_blood_pressure"
+                    style="@style/MainItemStyle"
+                    />
+
+                <include
+                    android:id="@+id/main_heart_rate"
+                    layout="@layout/main_item_heart_rate"
+                    style="@style/MainItemStyle"
+                    />
+
+                <include
+                    android:id="@+id/main_water"
+                    layout="@layout/main_item_water"
+                    style="@style/MainItemStyle"
+                    />
+
+                <include
+                    android:id="@+id/main_cycle"
+                    layout="@layout/main_item_cycle"
+                    style="@style/MainItemStyle"
+                    />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <TextView
+                android:id="@+id/order_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textColor="@color/tab_selected_color"
+                android:text="@string/edit" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<!--
+    Privacy Friendly Pedometer is licensed under the GPLv3.
+    Copyright (C) 2017  Tobias Neidig
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="cardview_default_margin">8dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">120dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+
+    <dimen name="widget_margin">8dp</dimen>
+
+    <!--  dimens for weightInfo section  -->
+    <dimen name="layout_margin_h">20dp</dimen>
+    <dimen name="button_bottom_margin">30dp</dimen>
+    <dimen name="round_rect_bg_radius">15dp</dimen>
+    <dimen name="indicatorbar_offset">15dp</dimen>
+
+    <dimen name="indicator_text_size">10sp</dimen>
+    <dimen name="history_item_text_size">15sp</dimen>
+
+    <dimen name="bottom_area_padding">5dp</dimen>
+    <dimen name="bottom_area_text_size">12sp</dimen>
+
+    <dimen name="width_circle_stroke">1dp</dimen>
+    <dimen name="width_circle_stroke_thickness">3dp</dimen>
+    <dimen name="small_dot_circle_diff">4dp</dimen>
+
+    <dimen name="main_value_text_size">25sp</dimen>
+</resources>

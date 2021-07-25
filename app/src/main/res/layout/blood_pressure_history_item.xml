@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.secuso.privacyfriendlyactivitytracker.blood.HistoryItemBloodPressure
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/layout_margin_h"
+    android:paddingEnd="@dimen/layout_margin_h"
+    android:background="@drawable/picker_background"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_notes"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/blood_pressure_value"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/history_item_text_size"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_arrow"
+        android:layout_gravity="end" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:buttonTint="@color/checkbox_color" />
+
+</org.secuso.privacyfriendlyactivitytracker.blood.HistoryItemBloodPressure>

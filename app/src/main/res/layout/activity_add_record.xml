@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".weight.AddRecordActivity">
+
+    <include android:id="@+id/toolbar_area"
+        layout="@layout/toolbar"/>
+
+    <include android:id="@+id/datetime_area"
+        layout="@layout/date_time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_area"
+        />
+
+    <LinearLayout
+        android:id="@+id/weight_value_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:orientation="vertical"
+        android:layout_below="@+id/datetime_area"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_weight_title"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/weight_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/kilogram" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ruler_bg"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            >
+
+            <org.secuso.privacyfriendlyactivitytracker.utils.CustomRulerView
+                android:id="@+id/weight_ruler"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                app:gv_currentValue="65"
+                app:gv_maxValue="150"
+                app:zjun_bgColor="@android:color/white"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/body_fat_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:orientation="vertical"
+        android:layout_below="@+id/weight_value_picker"
+        >
+
+        <RelativeLayout
+            android:id="@+id/add_fat_rate_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/body_fat_rate"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:layout_centerVertical="true"
+                />
+
+            <ImageView
+                android:id="@+id/fat_rate_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_plus"
+                android:layout_centerVertical="true"
+                />
+
+            <ImageView
+                android:id="@+id/fat_rate_hide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_close"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/fat_rate_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            >
+
+                <TextView
+                    android:id="@+id/fat_rate_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/percent" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ruler_bg"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                >
+
+                <org.secuso.privacyfriendlyactivitytracker.utils.CustomRulerView
+                    android:id="@+id/fat_rate_ruler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    app:gv_currentValue="20"
+                    app:gv_maxValue="49"
+                    app:gv_minValue="1"
+                    app:zjun_bgColor="@android:color/white"
+                    />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/add_record_done"
+        style="@style/ButtonStyle"
+        android:background="@drawable/add_done_bg"
+        android:text="@string/done"
+        android:textColor="@android:color/white"
+        />
+
+</RelativeLayout>

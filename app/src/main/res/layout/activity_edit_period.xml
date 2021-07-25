@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".cycle.EditPeriodActivity">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/period_picker"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingStart="@dimen/layout_margin_h"
+        android:paddingEnd="@dimen/layout_margin_h"
+        android:background="@drawable/picker_background"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:text="@string/period_length" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/selected_period_days"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical" />
+
+        <ImageView
+            android:id="@+id/arrow_date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:background="@android:color/darker_gray"
+        />
+
+    <LinearLayout
+        android:id="@+id/cycle_picker"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingStart="@dimen/layout_margin_h"
+        android:paddingEnd="@dimen/layout_margin_h"
+        android:background="@drawable/picker_background"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:text="@string/cycle_length" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/selected_cycle_days"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_h"
+        android:layout_marginEnd="@dimen/layout_margin_h"
+        android:layout_marginTop="@dimen/layout_margin_h"
+        android:textSize="12sp"
+        android:text="@string/cycle_calendar_desc" />
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Privacy Friendly Pedometer is licensed under the GPLv3.
+    Copyright (C) 2017  Tobias Neidig
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <color name="darkgrey">#757575</color>
+    <color name="colorPrimary">#024265</color>
+    <color name="colorPrimaryDark">#024265</color>
+    <color name="colorAccent">#0274B2</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="middlegrey">#A8A8A8</color>
+    <color name="default_text_color">#808080</color>
+    <color name="yellow">#f6d126</color>
+    <color name="green">#388E3C</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen">#026499</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen">#448bb2</color>
+
+    <color name="main_background_color">#F9F9F9</color>
+
+    <color name="tab_selected_color">#fa632e</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen</item>
+        <item>@color/dot_light_screen</item>
+        <item>@color/dot_light_screen</item>
+        <item>@color/dot_light_screen</item>
+        <item>@color/dot_light_screen</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen</item>
+        <item>@color/dot_dark_screen</item>
+        <item>@color/dot_dark_screen</item>
+        <item>@color/dot_dark_screen</item>
+        <item>@color/dot_dark_screen</item>
+    </array>
+
+    <!--  divider color  -->
+    <color name="divider_color">#F5F5F5</color>
+    <color name="health_item_divider_color">#E8E1E1</color>
+
+    <color name="picker_selected_bg_color">#12121212</color>
+    <color name="set_weight_goal_color">#FB6725</color>
+
+    <color name="light_gray">#FAFAFA</color>
+    <color name="chart_color">#007dff</color>
+
+    <color name="gradient_0">#e95f5f</color>
+    <color name="gradient_50">#e2d949</color>
+    <color name="gradient_75">#5fb0e9</color>
+    <color name="gradient_100">#20b26c</color>
+
+    <color name="light_blue">#50a0ff</color>
+    <color name="checkbox_color">#007AFF</color>
+
+    <array name="sample_progress_gradient">
+        <item>#D32F2F</item>
+        <item>#E57373</item>
+    </array>
+
+    <color name="toggle_button_checked_color">#F4748D</color>
+    <color name="cycle_calendar_select_color">#c4c4c4</color>
+    <color name="cycle_calendar_period_background_color">#ffdfe5</color>
+    <color name="cycle_calendar_fertile_background_color">#d8ecfe</color>
+    <color name="cycle_calendar_predict_dot_color">#fb3058</color>
+    <color name="main_cycle_period_color">#ff6968</color>
+    <color name="main_cycle_fertile_color">#6674f7</color>
+
+    <color name="cycle_circle_calendar_background_color">#fff1f4</color>
+    <color name="period_indicator_color">#fffb3058</color>
+    <color name="fertile_indicator_color">#ff0d7efa</color>
+
+    <color name="tab_active_color">#fb6522</color>
+    <color name="exercise_stop_border_color">#d45052</color>
+    <color name="dialog_button_color">#139FFB</color>
+
+    <color name="heart_rate_circle_color">#ff793c</color>
+    <color name="heart_rate_bar_background_color">#f0f0f0</color>
+    <color name="average_resting_range">#f9e5dc</color>
+    <color name="heart_rate_bar_text_color">#909090</color>
+    <color name="status_item_background_color">#efefef</color>
+    <color name="status_item_color">#a1a1a1</color>
+    <color name="heart_rate_line_chart_color">#ff4d6a</color>
+    <color name="heart_rate_bar_chart_color">#fd98ac</color>
+    <color name="heart_rate_chart_highlight_color">#fc3159</color>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/layout_margin_h"
+    android:paddingEnd="@dimen/layout_margin_h"
+    tools:context=".water.MonthWaterFragment">
+
+    <include
+        layout="@layout/measure_data_layout" />
+
+    <com.github.mikephil.charting.charts.CombinedChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="10dp" />
+
+    <include
+        layout="@layout/water_average_layout"/>
+
+</LinearLayout>

@@ -1,0 +1,763 @@
+<!--
+    Privacy Friendly Pedometer is licensed under the GPLv3.
+    Copyright (C) 2017  Tobias Neidig
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Health</string>
+    <string name="app_name_long">Privacy Friendly Pedometer</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <!-- Menu Items-->
+    <string name="action_help">Information</string>
+    <string name="action_about">About</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_main">Pedometer</string>
+    <string name="action_training">Training</string>
+
+    <!-- AboutActivity-->
+    <string name="version_number">Version</string>
+    <string name="about_author">Author: </string>
+    <string name="about_author_names" translatable="false">Tobias Neidig </string>
+    <string name="about_author_contributors"> and contributors.</string>
+    <string name="about_affiliation">In affiliation with</string>
+    <string name="more_info">More information can be found on:</string>
+    <string name="about_third_party_libs">The app uses <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart from Philipp Jahoda</a> (Apache 2 License).</string>
+    <string name="privacy_friendly">This application belongs to the Privacy Friendly Apps group developed by Technische Universität Darmstadt. Sourcecode licensed under GPLv3. Images copyright TU Darmstadt and Google Inc.</string>
+    <string name="github" translatable="false"><a href="https://github.com/SecUSo/privacy-friendly-activity-tracker">Github-Repo</a></string>
+    <string name="url"><a href="https://www.secuso.org/pfa">SECUSO-Website</a></string>
+
+    <!-- ReportFragment -->
+    <string name="month">Month</string>
+    <string name="week">Week</string>
+    <string name="day">Day</string>
+    <string name="steps">Steps</string>
+    <string name="calories">calories</string>
+    <string name="activity_summary_subtitle">Summary of activities</string>
+    <string name="activity_chart_summary_subtitle">Detailed summary of your activities</string>
+    <string name="summary_card_kilocalories">kcal</string>
+    <string name="summary_card_calories">cal</string>
+    <string name="correct_steps">Correct steps</string>
+    <string name="correct_steps_dialog_title">Correct steps</string>
+    <string name="correct_steps_dialog_message">Please provide a new number of steps you walked.</string>
+    <string name="hint_steps">Number of steps</string>
+    <string name="pause_step_detection">Pause step detection</string>
+    <string name="continue_step_detection">Continue step detection</string>
+
+    <!-- HelpActivity -->
+    <string name="help_overview_heading">Overview</string>
+    <string name="help_intro">This app can count your steps in background, provides you an overview about your walked steps and allows you to define custom walking modes and notifications if the achievement of your daily step goal is in danger.</string>
+    <string name="help_functionality_step_counter_summary">The step counter counts your daily steps in background and can be disabled in the settings.</string>
+    <string name="help_functionality_notification_heading">Permanent Notification</string>
+    <string name="help_functionality_notification">Notification</string>
+    <string name="help_functionality_notification_summary">The permanent notification is necessary to keep the step counter alive in background. The content of the notification can be chosen in the settings.</string>
+    <string name="help_functionality_notification_delete">You can disable all notifications in system preferences.</string>
+    <string name="help_functionality_motivation_alert">Motivation alert</string>
+    <string name="help_functionality_motivation_alert_summary">The app can show you motivation alerts if the achievement of your daily step goal is in danger. You can define the criterion, the time of day and the notification texts.</string>
+    <string name="help_privacy_heading">Privacy Info</string>
+    <string name="help_permission_boot_heading">Permission: Receive Boot Completed</string>
+    <string name="help_permission_boot_description">is used to start the step counter and set the notifications at boot time. If the permission is not granted you have to start the app manually once after boot to activate the app.</string>
+    <string name="help_permissions_selection">The permissions used by Privacy Friendly Pedometer can not be managed by the user in any Android version.</string>
+    <string name="help_permission_wake_heading">Permission: Wake Lock</string>
+    <string name="help_permission_wake_description">is used to keep the CPU awake to count the steps in background.</string>
+    <string name="help_permission_gps_heading">Permission: Precise location</string>
+    <string name="help_permission_gps_description">is used to show your current walking speed on home screen. If the permission is not granted the walking speed will not be showed - there are no other implications.</string>
+
+    <!-- Preferences -->
+    <!-- general settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_group_title_personal_settings">Personalization</string>
+
+    <string name="pref_step_counter_enabled" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.step_counter_enabled</string>
+    <string name="pref_title_step_counter_enabled">Permanent step counter</string>
+    <string name="pref_summary_step_counter_enabled">The app counts your steps in background.</string>
+
+    <string name="pref_use_wake_lock" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.use_wake_lock</string>
+    <string name="pref_title_use_wake_lock">Keep processor awake</string>
+    <string name="pref_summary_use_wake_lock">On some devices the processor falls asleep and prevents counting steps. Enable this to keep the processor awake while counting steps - this may drain your battery!</string>
+
+    <string name="pref_use_wake_lock_during_training" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.use_wake_lock_during_training</string>
+    <string name="pref_title_use_wake_lock_during_training">Wake lock during training</string>
+    <string name="pref_summary_use_wake_lock_during_training">For better results during training mode keep processor awake. If app should keep the processor awake at any time this is automatically the case.</string>
+
+    <string name="pref_show_velocity" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.show_velocity</string>
+    <string name="pref_title_show_velocity">Show current velocity</string>
+    <string name="pref_summary_show_velocity">The app shows your current velocity in daily report. Access to your location is required to calculate the exact velocity.</string>
+
+    <string name="pref_default_daily_step_goal" translatable="false">10000</string>
+    <string name="pref_title_daily_step_goal">Personal daily step goal</string>
+    <string name="pref_unit_of_length" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.unit_of_length</string>
+    <string name="pref_title_unit_of_length">Unit of length</string>
+    <string-array name="pref_keys_unit_of_length">
+        <item>kilometers</item>
+        <item>miles</item>
+    </string-array>
+    <string-array name="pref_values_unit_of_length" translatable="false">
+        <item>km</item>
+        <item>mi</item>
+    </string-array>
+    <string name="unit_of_length_km">1|km|kilometers|km/h|1000|m</string><!-- 1km = 1km -->
+    <string name="unit_of_length_mi">0.621371|mi|miles|mph|5280|ft</string><!-- 1km = 0.621371 miles -->
+    <string name="pref_unit_of_energy" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.unit_of_energy</string>
+    <string name="pref_title_unit_of_energy">Unit of energy</string>
+    <string-array name="pref_keys_unit_of_energy">
+        <item>calories</item>
+        <item>joules</item>
+    </string-array>
+    <string-array name="pref_values_unit_of_energy" translatable="false">
+        <item>cal</item>
+        <item>J</item>
+    </string-array>
+
+    <string name="pref_explanation_weight_and_gender">To improve the calculation of the calories please set your weight and gender.</string>
+    <string name="pref_summary_notification_permanent">The permanent notification is shown when the app counts your steps in background. You can customize what the app should show you.</string>
+    <string name="pref_summary_accelerometer_threshold">The app uses the accelerometer of your device. To optimize the step detection adjust the sensitivity, please.</string>
+
+    <string name="pref_weight" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.weight</string>
+    <string name="pref_title_weight">Weight (kg)</string>
+    <string name="pref_default_weight" translatable="false">65.0</string>
+
+    <string name="pref_gender" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.gender</string>
+    <string name="pref_title_gender">Gender</string>
+    <string-array name="pref_keys_gender">
+        <item>female</item>
+        <item>male</item>
+    </string-array>
+    <string-array name="pref_values_gender" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_accelerometer_threshold" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.accelerometer_threshold</string>
+    <string name="pref_title_accelerometer_threshold">Sensitivity</string>
+    <string-array name="pref_keys_accelerometer_threshold">
+        <item>very high</item>
+        <item>higher</item>
+        <item>high</item>
+        <item>normal</item>
+        <item>low</item>
+        <item>lower</item>
+        <item>very low</item>
+    </string-array>
+    <string-array name="pref_values_accelerometer_threshold" translatable="false">
+        <item>0.125</item>
+        <item>0.25</item>
+        <item>0.50</item>
+        <item>0.75</item>
+        <item>1.00</item>
+        <item>1.25</item>
+        <item>1.50</item>
+    </string-array>
+    <string name="pref_accelerometer_steps_threshold" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.accelerometer_step_threshold</string>
+    <string name="pref_title_accelerometer_steps_threshold">Steps before counting starts</string>
+    <string name="pref_default_accelerometer_steps_threshold" translatable="false">10</string>
+    <!-- /general settings -->
+    <!-- notification settings -->
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_group_title_permanent_notification">Permanent Notification</string>
+    <string name="pref_group_title_motivation_alert">Motivation Alert</string>
+
+    <string name="pref_notification_permanent_show_steps" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.permanent_notification_show_steps</string>
+    <string name="pref_title_notification_permanent_show_steps">Show number of steps walked today</string>
+    <string name="pref_notification_permanent_show_distance" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.permanent_notification_show_distance</string>
+    <string name="pref_title_notification_permanent_show_distance">Show distance walked today</string>
+    <string name="pref_notification_permanent_show_calories" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.permanent_notification_show_calories</string>
+    <string name="pref_title_notification_permanent_show_calories">Show number of calories</string>
+
+    <string name="pref_notification_motivation_alert_enabled" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_enabled</string>
+    <string name="pref_title_notification_motivation_alert_enabled">Enable motivation alert</string>
+    <string name="pref_notification_motivation_alert_time" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_time</string>
+    <string name="pref_title_notification_motivation_alert_time">Motivation alert time</string>
+    <string name="pref_notification_motivation_alert_texts" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_texts</string>
+    <string name="pref_title_notification_motivation_alert_texts">Motivation notification texts</string>
+    <string name="pref_notification_motivation_alert_criterion" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_criterion</string>
+    <string name="pref_title_notification_motivation_alert_criterion">Motivation alert criterion</string>
+    <string-array name="pref_keys_notification_motivation_alert_criterion">
+        <item>less than 90&#65285; of daily step goal</item>
+        <item>less than 70&#65285; of daily step goal</item>
+        <item>less than 50&#65285; of daily step goal</item>
+    </string-array>
+    <string-array name="pref_values_notification_motivation_alert_criterion" translatable="false">
+        <item>90</item>
+        <item>70</item>
+        <item>50</item>
+    </string-array>
+    <!-- /notification settings -->
+    <string name="pref_header_walking_modes">Walking modes</string>
+    <string name="pref_widget_data_set" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.widget_data_set_</string>
+    <string name="pref_distance_measurement_start_timestamp" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.distance_measurement_start_timestamp</string>
+    <string name="pref_hw_steps_on_last_save" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.hw_steps_on_last_save</string>
+    <!-- /Preferences -->
+
+    <!-- Will be removed on next update -->
+    <string name="pref_daily_step_goal" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.daily_step_goal</string>
+    <string name="notification_text_steps">%1$s of %2$s steps walked today.</string>
+    <string name="notification_text_distance">%1$.2f %2$s walked today.</string>
+    <string name="notification_text_calories">Burned %.2f kcal today.</string>
+    <string name="notification_text_default">Pedometer is active.</string>
+    <!-- /Will be removed on next update -->
+    <string name="step_service_on_background" translatable="false">com.kr.health.step_service_on_background</string>
+
+    <!-- others -->
+    <string name="action_calories">Calories</string>
+    <string name="action_distance">Distance</string>
+    <string name="action_steps">Steps</string>
+    <string name="set">Set</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="operation_failed">Operation failed</string>
+    <string name="since">since</string>
+    <string name="okay">Okay</string>
+    <!-- /others -->
+
+    <!-- welcome dialog -->
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_text">Privacy Friendly Pedometer can count your steps in background and provides an overview about walked steps.</string>
+    <string name="slide_2_title">Customize</string>
+    <string name="slide_2_desc">To improve the calculation of the calories you have burned by walking please customize your personal settings.</string>
+    <string name="slide_2_desc_two">You can switch your current walking modes using the context menu in the toolbar.</string>
+    <string name="slide_3_title">Notifications</string>
+    <string name="slide_4_title">Widget</string>
+    <string name="slide_4_desc">Add a widget to your homescreen to stay up to date about your walked steps.</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <!-- /welcome dialog -->
+
+    <!-- motivation alert -->
+    <string-array name="pref_default_notification_motivation_alert_messages">
+        <item>Come on, it\'s time to walk!</item>
+    </string-array>
+    <string name="motivation_alert_empty">Set custom alert messages when the achievement of your daily step goal is in danger.\n\nThere will be no alert if no message exists.</string>
+    <string name="motivation_alert_input_title">Set motivation alert message</string>
+    <string name="motivation_alert_input_message">Set your own custom motivation alert. The app notifies you with one of your texts randomly.</string>
+    <string name="motivation_alert_input_empty">Empty motivation alerts are useless, aren\'t they?</string>
+    <string name="activity_title_motivation_alerts">Motivation alerts</string>
+    <string name="motivation_alert_notification_title">Step Counter</string>
+
+    <!-- walking modes -->
+    <string name="activity_title_walking_modes">Walking modes</string>
+    <string name="walking_mode_input_title">Walking mode</string>
+    <string name="walking_mode_input_message">Set your custom walking mode:</string>
+    <string name="walking_mode_at_least_one_is_required">At least one walking mode is required.</string>
+    <string name="walking_mode_cannot_delete_active_one">Cannot delete an active walking mode.</string>
+    <string name="walking_mode_set_active">Set as active</string>
+    <string name="walking_mode_menu_learn">Learn</string>
+    <string name="walking_mode_learning_distance_description">Distance to walk:</string>
+    <string name="walking_mode_learning_steps_description">Steps walked:</string>
+    <string name="walking_mode_learning_stop">End learning mode</string>
+    <string name="walking_mode_learning_description">The application can learn the distance per step. Please walk the given distance and press end if you finished.</string>
+    <string name="pref_walking_mode_learning_active" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.walking_mode_learning_active</string>
+    <string name="step_length">Step length:</string>
+    <string name="walking_mode_active_ext"> (active)</string>
+    <string name="walking_mode_input_empty">Name and step length are required. Please fill in!</string>
+    <string name="hint_walking_mode_name">Name</string>
+    <string name="hint_walking_mode_step_length">Step length (Meters)</string>
+    <string name="step_running">Running</string>
+    <string name="step_walking">Walking</string>
+    <string-array name="pref_default_walking_mode_names">
+        <item>Walking</item>
+        <item>Running</item>
+    </string-array>
+    <string-array name="pref_default_walking_mode_step_lenghts" translatable="false">
+        <item>0.6</item><!-- step length in meters -->
+        <item>0.9</item>
+    </string-array>
+
+    <string name="training_overview_empty">It seems like you didn\'t used the training functionality, yet. It\'s time to start your training!</string>
+    <string name="training_input_message" />
+    <string name="training_input_title">Training session</string>
+    <string name="activity_title_training">Training</string>
+    <string name="hint_training_description">Description</string>
+    <string name="hint_training_title">Title</string>
+    <string name="hint_training_feeling">Feeling:</string>
+    <string name="training_card_calories">kcal</string>
+    <string name="training_card_distance_km">km</string>
+    <string name="training_card_duration">h</string>
+    <string name="training_velocity">km/h</string>
+    <string name="training_stop_button">End training now</string>
+    <string name="training_default_title">%1$s %4$02d.%3$02d.%2$04d</string>
+    <string name="activity_summary_chart_legend_stepgoal">Stepgoal</string>
+    <string name="widget_config_data_set_title">Which data should be displayed?</string>
+    <string name="action_distance_measurement">Distance Measurement</string>
+    <string name="distance_measurement_stop_button">Stop distance measurement</string>
+    <string name="distance_measurement_start_button">Start distance measurement</string>
+    <string name="joules">J</string>
+    <string name="kilojoules">kJ</string>
+    <string name="slide_5_title">Step Detection</string>
+    <string name="slide_5_desc">The app detects your steps based on different algorithms. On some devices you can define the sensivity of step detection in settings. In addition to that you can add steps you walked without the app or correct the stepcount on daily activity chart.</string>
+    <string name="slide_3_desc">Define custom walking modes and notifications if the achievement of your daily step goal is in danger.</string>
+    <string name="slide_2_desc_three">In the settings you can define your own walking modes with different step lengths.</string>
+    <string name="help_walkingmodes_heading">Walking Modes</string>
+    <string name="help_walkingmodes_selection">You can define your own walking modes like \'Running\' or \'Walking\' in the preferences. Each walking mode has its own step length.</string>
+    <string name="help_training_heading">Training Sessions</string>
+    <string name="help_training_selection">The training sessions can be used to track your training performance. Each session tracks e.g. the training duration, the walked steps and distance.</string>
+    <string name="help_distancemeasurement_heading">Distance Measurement</string>
+    <string name="help_distancemeasurement_selection">The distance measurement feature allows you to measure the distance between the button press \'Start\' and \'Stop\'. The data will not be stored after app restarts. To persist the data you can use the training sessions.</string>
+    <string name="help_correctsteps_heading">Correct steps manually</string>
+    <string name="help_correctsteps_selection">You can modify the detected daily steps in daily report view. This allows you to add steps you walked without the app or to correct the detected number of steps.</string>
+    <string name="slide_5_desc_two">Click on \'Preferences\' to set your step size and customize your personal data.</string>
+
+    <!--    main layout strings-->
+    <string name="main_exercise_title">Exercise records</string>
+    <string name="main_exercise_desc">Stay active, stay healthy</string>
+
+    <string name="main_blood_pressure_title">Blood pressure</string>
+    <string name="main_blood_pressure_desc">Keep an eye on your blood pressure</string>
+
+    <string name="main_heart_rate_title">Heart rate</string>
+    <string name="main_heart_rate_desc">Check your heart rate throughout the day</string>
+
+    <string name="main_water_title">Water</string>
+    <string name="main_water_desc">Record your water intake every day.</string>
+
+    <string name="main_weight_title">Weight</string>
+    <string name="main_weight_desc">Stay on top of your weight</string>
+
+    <string name="main_circlebar_steps">steps</string>
+
+    <!--  weight layout strings  -->
+    <string name="add_record">Add record</string>
+    <string name="history">History</string>
+
+    <string name="weight_date">Date</string>
+    <string name="weight_time">Time</string>
+    <string name="date_format1">%1$d-%2$d-%3$d</string>
+    <string name="date_format2">%1$d. %2$d. %3$d</string>
+    <string name="date_format3">%1$d/%2$d/%3$d</string>
+    <string name="date_format4">%1$d/%2$d</string>
+    <string name="date_format5">%1$d. %2$s</string>
+    <string name="date_format6">%1$s %2$02d - %3$02d</string>
+    <string name="date_format7">%1$s %2$02d</string>
+    <string name="date_format8">%1$s %2$02d - %3$s %4$02d</string>
+    <string name="date_format9">%1$d %2$s - %3$d %4$s</string>
+    <string name="date_format10">%1$d</string>
+    <string name="datetime_format">%1$d/%2$d/%3$d %4$02d:%5$02d %6$s</string>
+    <string name="time_format">%1$d : %2$d</string>
+    <string name="time_format1">%1$02d:%2$02d:%3$02d</string>
+    <string name="set_time">Set time</string>
+    <string name="dialog_confirm">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="kilogram">kg</string>
+    <string name="percent">%</string>
+    <string name="body_fat_rate">Body fat rate</string>
+    <string name="done">done</string>
+    <string name="error_msg">Can\'t enter a time earlier than the current time.</string>
+    <string name="underweight">Underweight</string>
+    <string name="healthy">Healthy</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese">Obese</string>
+    <string name="severe_obese">Severe obese</string>
+    <string name="weight_goal">Weight goal</string>
+    <string name="set_weight_goal">Set weight goal</string>
+    <string name="adjust_goal">Adjust goal</string>
+    <string name="set_new_goal">Set a new goal</string>
+    <string name="make_weight_goal_tip">Make goals to stay on track.</string>
+    <string name="success_goal">Congratulations on reaching your goal!</string>
+    <string name="closer_goal">You are %1$.1f kg closer to  your goal!</string>
+    <string name="gain_goal">You still need to gain %1$.1f kg</string>
+    <string name="lose_goal">You still need to lose %1$.1f kg</string>
+    <string name="note">Note</string>
+    <string name="set_new_goal_suggestion_desc">Target reached! Keep going and set a new target.</string>
+    <string name="start_at">Started at: %1$s kg</string>
+    <string name="goal">Goal: %1$s kg</string>
+    <string name="record">Record</string>
+    <string name="more">More</string>
+    <string name="with_kilogram">%.1f kg</string>
+    <string name="with_percent">%.1f \%%</string>
+    <string name="avg">%.1f</string>
+    <string name="average">Avg</string>
+    <string name="monthly_average">Monthly avg</string>
+    <string name="empty_value">--</string>
+    <string name="min_max">%.1f-%.1f</string>
+    <string name="changes">Changes</string>
+    <string name="select_all">Select all</string>
+    <string name="deselect_all">Deselect all</string>
+    <string name="avg_text">Avg %.1f kg</string>
+    <string name="nothing_selected">No item selected</string>
+    <string name="one_item_selected_text">%1$d item selected</string>
+    <string name="multi_item_selected_text">%1$d items selected</string>
+    <string name="delete_data_desc">Delete data?</string>
+    <string name="ok">Ok</string>
+    <string name="no_weight_data">No weight data</string>
+    <string name="about_bmi">About BMI</string>
+    <string name="bmi_desc">Body mass index (BMI) is your weight in kilograms divided by the square of your height in meters. For example, an adult who\'s 1.75 meters tall and weights 70 kilograms
+    will have a BMI of 22.9. The healthy range for you will depend on your age, gender, and muscle mass.</string>
+    <string name="bmi_formula">Calculating BMI: 65.0 kg/1.70 ㎡ = 22.5</string>
+    <string name="about_body_fat_percentage">About body fat percentage</string>
+    <string name="body_fat_percentage_desc">The body fat percentage is the amount of body fat as a proportion of body weight. This can tell you more about your body\'s fat and lean body mass.
+    The body fat percentage can be determined by a number of methods. The percentage of body fat in an individual varies depending on sex, age, height and weight.</string>
+    <string name="body_fat_percentage_range_mean">Mean range of body fat percentage</string>
+    <string name="classification">Classification</string>
+    <string name="women_fat_percent">Women (% fat)</string>
+    <string name="men_fat_percent">Men (% fat)</string>
+    <string name="essential_fat">Essential fat</string>
+    <string name="essential_women_percent">10.0-13.9%</string>
+    <string name="essential_men_percent">2.0-5.9%</string>
+    <string name="athletes">Athletes</string>
+    <string name="athletes_women_percent">14.0-20.9%</string>
+    <string name="athletes_men_percent">6.0-13.9%</string>
+    <string name="fitness">Fitness</string>
+    <string name="fitness_women_percent">21.0-24.9%</string>
+    <string name="fitness_men_percent">14.0-17.9%</string>
+    <string name="fat_average">Average</string>
+    <string name="average_women_percent">25.0-31.9%</string>
+    <string name="average_men_percent">18.0-24.9%</string>
+    <string name="obese_women_percent">32% and higher</string>
+    <string name="obese_men_percent">25% and higher</string>
+    <string name="fat_diff_desc">The body fat requirements for men and women are different.\n\n
+    A healthcare professional should always be consulted to measure your body fat percentage and to suggest methods to help you keep your body fat under control.</string>
+
+    <string name="systolic">Systolic</string>
+    <string name="diastolic">Diastolic</string>
+    <string name="millimeter_of_mercury">mmHg</string>
+    <string name="with_diastolic">/%1$dmmHg</string>
+    <string name="pulse">Pulse</string>
+    <string name="beats_per_minute">bpm</string>
+    <string name="blood_pressure_format">%1$d/%2$d</string>
+    <string name="blood_pressure_format1">%1$d/%2$d mmHg</string>
+    <string name="blood_pressure_error_msg">Input error, low pressure value cannot be greater than high pressure value</string>
+    <string name="severe_hypertension">Severe hypertension</string>
+    <string name="moderate_hypertension">Moderate hypertension</string>
+    <string name="mild_hypertension">Mild hypertension</string>
+    <string name="normal_high">Normal/High</string>
+    <string name="normal">Normal</string>
+    <string name="hypotension">Hypotension</string>
+    <string name="no_blood_pressure_data">No blood pressure data</string>
+    <string name="low">Low</string>
+    <string name="high">High</string>
+    <string name="blood_help_desc">Blood pressure is the force of blood flow pushing against your artery walls. Systolic refers to blood pressure when the heart beats while pumping blood.
+     Diastolic refers to blood pressure when the heart is at rest between beats.\n\n
+    Measurements less than 120/80 mmHg are generally considered to be within the normal range for adults aged 20 or over.\n\n
+    Tracking blood pressure at home is important for those who have high blood pressure. When you track blood pressure at home on a regular basis, try to check at the same time of day for more
+    consistent readings. Avoid cigarettes and exercise for at least 30 minutes before checking your blood pressure.</string>
+
+    <string name="measure">Measure</string>
+    <string name="measure_heart_rate">Measure heart rate</string>
+    <string name="cameraPermissionRequired">Camera permission is required for measuring heart rate.</string>
+    <string name="measuring">Measuring…</string>
+    <string name="stay_measure">Try to stay still and quiet</string>
+    <string name="check_finger">Check that your finger is on the camera</string>
+    <string name="place_finger">Place your finger on the camera</string>
+    <string name="finished">Finished</string>
+    <string name="my_heart_rate">My heart rate</string>
+    <string name="average_resting_range">Average resting range</string>
+    <string name="with_bpm" translatable="false">%1$d bpm</string>
+    <string name="select_current_status">Select current status</string>
+    <string name="notes">Notes</string>
+    <string name="resting_for_measure_heart_rate">Rest for 10 minutes first for more accurate results.</string>
+    <string name="detail">Detail</string>
+    <string-array name="status_title_array">
+        <item name="general">General</item>
+        <item name="resting">Resting</item>
+        <item name="after_exercise">After exercise</item>
+        <item name="before_exercise">Before exercise</item>
+        <item name="sad">Sad</item>
+        <item name="excited">Excited</item>
+        <item name="tired">Tired</item>
+        <item name="in_love">In love</item>
+        <item name="surprised">Surprised</item>
+        <item name="angry">Angry</item>
+        <item name="fearful">Fearful</item>
+        <item name="unwell">Unwell</item>
+    </string-array>
+    <string-array name="heart_rate_status_drawable_array">
+        <item>tracker_hr_result_ic_general_mtrl</item>
+        <item>tracker_hr_result_ic_resting_mtrl</item>
+        <item>tracker_hr_result_ic_afterexercise_mtrl</item>
+        <item>tracker_hr_result_ic_beforeexercise_mtrl</item>
+        <item>tracker_hr_result_ic_sad_mtrl</item>
+        <item>tracker_hr_result_ic_excited_mtrl</item>
+        <item>tracker_hr_result_ic_tired_mtrl</item>
+        <item>tracker_hr_result_ic_inlove_mtrl</item>
+        <item>tracker_hr_result_ic_surprise_mtrl</item>
+        <item>tracker_hr_result_ic_angry_mtrl</item>
+        <item>tracker_hr_result_ic_fearful_mtrl</item>
+        <item>tracker_hr_result_ic_unwell_mtrl</item>
+    </string-array>
+
+    <string name="milliliter">ml</string>
+    <string name="glasses">glasses</string>
+    <string name="water_format">%1$d ml</string>
+    <string name="target_format">/%1$d</string>
+    <string name="daily_water_intake">Daily water intake (glasses)</string>
+    <string name="water_track_desc">Keep track of how much water you drink. One glass is 250ml</string>
+    <string name="set_target">Set target</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="water_desc1">Good health starts with staying hydrated!</string>
+    <string name="water_desc2">Set a daily water intake target to stay on track. One glass is 250 ml.</string>
+    <string name="average_water_intake">Average water intake</string>
+    <string name="no_data_desc">No recorded water intake data</string>
+
+    <string name="add">Add</string>
+    <string name="stats">Stats</string>
+    <string name="add_workout_record">Add workout record</string>
+    <string name="choose_activity">Choose activity</string>
+    <string name="duration">Duration</string>
+    <string name="distance">Distance</string>
+    <string name="start_time">Start time</string>
+    <string name="duration_format">%1$02d:%2$02d:%3$02d</string>
+    <string name="kilometer">km</string>
+    <string name="meter">m</string>
+    <string name="distance_range_limit_kilometer">The range of distance is 0.1–500km.</string>
+    <string name="distance_range_limit_meter">The range of distance is %1$.1f – %2$dm.</string>
+    <string name="with_kilometer">%.2f km</string>
+    <string name="with_meter">%.2f m</string>
+    <string name="with_meter_integer">%d m</string>
+    <string name="outdoor_run">Outdoor run</string>
+    <string name="outdoor_walk">Outdoor walk</string>
+    <string name="outdoor_cycle">Outdoor cycle</string>
+    <string name="indoor_run">Indoor run</string>
+    <string name="pool_swim">Pool swim</string>
+    <string name="complete_workout_warning">Please complete workout information.</string>
+    <string name="time_overflow_warning">Start time must be earlier than end time, as calculated based on workout duration.</string>
+    <string name="average_pace">Avg pace</string>
+    <string name="average_speed">Avg speed</string>
+    <string name="average_pace_format">%1$02d"'"%2$02d\"</string>
+    <string name="kilometer_with_slash">/km</string>
+    <string name="kilometer_pace_unit">%1$s /km</string>
+    <string name="kilometer_per_hour">km/h</string>
+    <string name="kcal">kcal</string>
+    <string name="performance">Performance</string>
+    <string name="swim_average_pace_unit"> /100 m</string>
+    <string name="swim_pace_unit">%1$s /100 m</string>
+    <string name="swolf">Swolf</string>
+    <string name="swolf_desc">SWOLF is a way of measuring your swimming efficiency.
+        It is calculated per length (ideally in a 50m swimming pool) by comparing the length of time
+        it took you to swim the length with the number of strokes it took you to swim it.
+        The smaller the value, the higher the efficiency.
+    </string>
+    <string name="running">Running (km)</string>
+    <string name="walking">Walking (km)</string>
+    <string name="cycling">Cycling (km)</string>
+    <string name="swimming">Swimming (m)</string>
+    <string name="distance_unit_kilometer">Distance (km)</string>
+    <string name="distance_unit_meter">Distance (m)</string>
+    <string name="calorie_unit">Calories (kcal)</string>
+    <string name="times">Times</string>
+    <string name="times_unit">times</string>
+    <string name="exercise_total_default_value">0.00</string>
+    <string name="total_distance">Total distance</string>
+    <string name="total_duration">Total duration</string>
+    <string name="total_calories">Total calories</string>
+    <string name="minute">min</string>
+    <string name="year">Year</string>
+    <string name="total">Total</string>
+    <string name="no_exercise_records">No exercise records</string>
+
+    <string-array name="exercise_type_array">
+        <item name="all">All</item>
+        <item name="running">Running</item>
+        <item name="walking">Walking</item>
+        <item name="cycling">Cycling</item>
+        <item name="swimming">Swimming</item>
+    </string-array>
+
+    <string-array name="workout_type_array">
+        <item name="running">Running</item>
+        <item name="walking">Walking</item>
+        <item name="cycling">Cycling</item>
+        <item name="swimming">Swimming</item>
+    </string-array>
+
+    <string name="loading">Loading...</string>
+
+    <string name="main_cycle_title">Cycle Calendar</string>
+    <string name="main_cycle_desc">Track your cycle</string>
+    <string name="cycle">Cycle</string>
+    <string name="records">Records</string>
+    <string name="record_symptoms">Record symptoms</string>
+    <string name="flow">Flow</string>
+    <string name="pain">Pain</string>
+    <string name="physical_conditions">Physical Conditions</string>
+    <string name="flow_intensity_light">Light</string>
+    <string name="flow_intensity_average">Average</string>
+    <string name="flow_intensity_heavy">Heavy</string>
+    <string name="pain_intensity_light">Light</string>
+    <string name="pain_intensity_average">Average</string>
+    <string name="pain_intensity_severe">Severe</string>
+    <string name="cramps">Cramps</string>
+    <string name="breast_pain">Breast pain</string>
+    <string name="headache">Headache</string>
+    <string name="dizziness">Dizziness</string>
+    <string name="acne">Acne</string>
+    <string name="back_pain">Back pain</string>
+    <string name="nausea">Nausea</string>
+    <string name="tiredness">Tiredness</string>
+    <string name="bloating">Bloating</string>
+    <string name="period_started">Period started</string>
+    <string name="period_ended">Period ended?</string>
+    <string name="wait_period_desc">Wait until your next period to record your symptoms</string>
+
+    <string-array name="flow_intensity_array">
+        <item name="light">Light</item>
+        <item name="average">Average</item>
+        <item name="heavy">Heavy</item>
+    </string-array>
+
+    <string-array name="pain_intensity_array">
+        <item name="light">Light</item>
+        <item name="average">Average</item>
+        <item name="heavy">Severe</item>
+    </string-array>
+
+    <string-array name="symptom_conditions">
+        <item name="cramps">Cramps</item>
+        <item name="breast_pain">Breast pain</item>
+        <item name="headache">Headache</item>
+        <item name="dizziness">Dizziness</item>
+        <item name="acne">Acne</item>
+        <item name="back_pain">Back pain</item>
+        <item name="nausea">Nausea</item>
+        <item name="tiredness">Tiredness</item>
+        <item name="bloating">Bloating</item>
+    </string-array>
+
+    <string name="status_empty_desc">Record your period to generate data</string>
+    <string name="period_day_status">Period day %1$d</string>
+    <string name="period_closer_status_one">Period starts in 1 day</string>
+    <string name="period_closer_status">Period starts in %1$d days</string>
+    <string name="predicted_period_day_status">Predicted period day %1$d</string>
+    <string name="predicted_period_closer_status_one">Predicted period starts in 1 day</string>
+    <string name="predicted_period_closer_status">Predicted period starts in %1$d days</string>
+    <string name="fertile_closer_status_one">Fertile window starts in 1 day</string>
+    <string name="fertile_closer_status">Fertile window starts in %1$d days</string>
+    <string name="fertile_day_status">Fertile window day %1$d</string>
+
+    <string name="main_period_day_status">Period day %1$d</string>
+    <string name="main_predicted_period_day_status">Period day %1$d</string>
+    <string name="main_predicted_period_closer_status_one">Starts in 1 day</string>
+    <string name="main_predicted_period_closer_status">Starts in %1$d days</string>
+    <string name="main_fertile_closer_status_one">Fertile in 1 day</string>
+    <string name="main_fertile_closer_status">Fertile in %1$d days</string>
+    <string name="main_fertile_day_status">Fertile day %1$d</string>
+
+    <string name="total_days">Total: %1$d days</string>
+    <string name="impossible_modify_cycle_desc">Data older than 180 days cannot be modified</string>
+    <string name="period">Period</string>
+    <string name="fertile_window">Fertile window</string>
+    <string name="predict_period">Predict period</string>
+    <string name="period_length_limit_desc">Period length cannot exceed the set cycle length.</string>
+    <string name="period_cycle_short_desc">Your period cycle seems too short.</string>
+    <string name="edit_period">Edit period</string>
+    <string name="period_length">Period length</string>
+    <string name="cycle_length">Cycle length</string>
+    <string name="cycle_calendar_desc">Note: Cycle Calendar uses algorithms to predict the next period and fertile window based on information recorded by the users.
+    This data (period and cycle length) is just for reference.</string>
+    <string name="with_days">%1$d days</string>
+    <string name="average_period">Avg period (days)</string>
+    <string name="average_cycle">Avg cycle (days)</string>
+    <string name="current_cycle">Current cycle</string>
+    <string name="average_cycle_length">%1$d days (avg length)</string>
+    <string name="fill_out_period_data">Fill out your period data</string>
+    <string name="predict_next_data">Predict your next data.</string>
+    <string name="last_period">Last period</string>
+    <string name="select">Select</string>
+    <string name="complete_cycle_initial_warning">Please complete initial information.</string>
+    <string name="record_period">Record period</string>
+    <string name="no_cycle_data_desc">No data</string>
+    <string name="add_cycle_desc">Add some to start tracking.</string>
+    <string name="change_health_item_order_desc">Hold and drag the icons on the left to change the order.</string>
+    <string name="cycle_terminology">1. Terminology</string>
+    <string name="menstruation">Menstruation</string>
+    <string name="menstruation_content">Menstruation is also known as periods, are the regular discharge of blood and tissue from the inner lining of the uterus</string>
+    <string name="period_content">Periods usually happen every month and can last for 2 to 7 days. The average period is between 3 and 5 days long.</string>
+    <string name="fertile_window_content">The fertile window spans from 5 days before ovulation to 4 days after ovulation, for about 10 days total.
+    During this window there is a higher probability of pregnancy.</string>
+    <string name="cycle_important_information">2. Important information</string>
+    <string name="cycle_meaning">What is a menstrual cycle?</string>
+    <string name="cycle_content">Periods (menstruation) are part of the menstrual cycle. The period refers to the part of the cycle when the body discharges blood and tissue from the inner lining of the uterus.
+    A cycle is from the first day of the period to the first day of the next period. Cycles become more regular after the first 5 to 7 years.</string>
+    <string name="cycle_length_meaning">How long is the average cycle?</string>
+    <string name="cycle_length_content">The length varies by person. The average length is 28 days. Periods usually don\'t come exactly on time and it is normal for them to start 7 days early or late.
+    Periods can last for 2 to 7 days and the average period is 3 to 5 days long.</string>
+    <string name="cycle_phases">Phases</string>
+    <string name="cycle_phases_content">The menstrual cycle is made up of phases. The phases are divided by two events, the ovarian cycle and the uterine cycle. The ovarian cycle is the follicular phase,
+    ovulation, and the luteal phase. The uterine cycle is menstruation, the proliferative phase, and the secretory phase.\nNote: Ovulation is not considered a stage, but the event that divides the phases.\n\n
+    In a general sense, the follicular phase starts the first day of the period and ends the day of ovulation. The period is the early part of the follicular phase. Follicles start maturing during the period.
+    The main event of the follicular phase happens after the bleeding ends. During this time more estrogen is produced and the uterus is prepared for possible fertilization. There is no secretion during this time.
+    Ovulation marks the end of this phase, and the beginning of the next.\n\n
+    The day of ovulation, the egg is released. Under standard circumstances, the next ovulation will take place about 14 to 16 days after the next period starts. The chances of pregnancy are highest 5 days
+    before ovulation, this period is called the fertile window.\n\n
+    The stage after ovulation is called the luteal phase. The ovaries are stimulated by hormones, luteinizing hormones are secreted. If fertilization didn\'t occur the thickened uterus walls will collapse,
+    starting the period. This indicates the end of the current cycle and the start of the next cycle.</string>
+    <string name="cycle_predictions">3. Predictions</string>
+    <string name="period_predictions">Period predictions</string>
+    <string name="period_predictions_content">Predictions are based on the individual\'s data(including the average length of their period and cycle). Reminders are sent based on this data to help keep
+    track of the menstrual cycle.</string>
+
+    <string-array name="health_item_list">
+        <item name="weight">Weight</item>
+        <item name="exercise">Exercise</item>
+        <item name="blood">Blood pressure</item>
+        <item name="heart">Heart rate</item>
+        <item name="water">Water</item>
+        <item name="cycle">Cycle calendar</item>
+    </string-array>
+
+    <string name="exercise">Exercise</string>
+
+    <string name="goals">Goals</string>
+    <string name="gender">Gender</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="height">Height</string>
+    <string name="walking_step_length">Walking step length</string>
+    <string name="running_step_length">Running step length</string>
+    <string name="daily_notification_time">Daily notification time</string>
+    <string name="step_goal">Step goal</string>
+    <string name="water_goal">Water goal</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="with_centimeter" translatable="false">%1$d cm</string>
+    <string name="exercise_training_sensor_desc">Your phone\'s motion sensor is used to record your running data.
+    For improved data accuracy, please attach the phone to your arm.</string>
+    <string name="notification_label">Notification</string>
+    <string name="pause">Pause</string>
+    <string name="paused">(Paused)</string>
+    <string name="start">Start</string>
+    <string name="training_finish_warning">Touch and hold the end button to exit</string>
+    <string name="continue_training">Continue</string>
+    <string name="end">End</string>
+    <string name="training_end_warning_desc">You haven\'t  covered enough ground to create a record. End workout?</string>
+    <string name="speed">Speed (km/h)</string>
+    <string name="stop_touch_hint">Touch and hold to end</string>
+    <string name="with_steps">%1$d steps</string>
+    <string name="with_calories" translatable="false">%1$d kcal</string>
+
+    <string name="pref_weight_start" translatable="false">com.kr.health.pref.weight_start</string>
+    <string name="pref_weight_goal" translatable="false">com.kr.health.pref.weight_goal</string>
+    <string name="pref_daily_water_goal" translatable="false">com.kr.health.pref.daily_water_goal</string>
+    <string name="pref_birthday" translatable="false">com.kr.health.pref.birthday</string>
+    <string name="pref_height" translatable="false">com.kr.health.pref.height</string>
+    <string name="pref_notification_time" translatable="false">com.kr.health.pref.notification_time</string>
+    <string name="pref_training_started" translatable="false">com.kr.health.pref.training_started</string>
+    <string name="pref_training_type" translatable="false">com.kr.health.pref.training_type</string>
+    <string name="pref_training_total_steps" translatable="false">com.kr.health.pref.training_total_steps</string>
+    <string name="pref_training_speed_steps" translatable="false">com.kr.health.pref.training_speed_steps</string>
+    <string name="pref_training_auto_pause" translatable="false">com.kr.health.pref.training_auto_pause</string>
+    <string name="pref_training_user_pause" translatable="false">com.kr.health.pref.training_user_pause</string>
+    <string name="pref_training_last_updated_time" translatable="false">com.kr.health.pref.training_last_updated_time</string>
+    <string name="pref_is_first_time_launch" translatable="false">com.kr.health.pref.is_first_time_launch</string>
+    <string name="pref_is_new_weight_added" translatable="false">com.kr.health.pref.is_new_weight_added</string>
+
+    <string name="training_duration" translatable="false">TrainingDuration</string>
+
+    <string name="step_running_mode_change_note">It is set to running mode</string>
+    <string name="step_walking_mode_change_note">It is set to walking mode</string>
+
+    <string name="touch_again_exit_app">Touch again to exit</string>
+</resources>

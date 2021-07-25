@@ -1,0 +1,704 @@
+<!--
+    Privacy Friendly Pedometer is licensed under the GPLv3.
+    Copyright (C) 2017  Tobias Neidig
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="app_name">건강관리</string>
+    <string name="app_name_long">Privacy Friendly Pedometer</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <!-- Menu Items-->
+    <string name="action_help">정보</string>
+    <string name="action_about">About</string>
+    <string name="action_settings">설정</string>
+    <string name="action_main">Pedometer</string>
+    <string name="action_training">훈련</string>
+
+    <!-- AboutActivity-->
+    <string name="version_number">Version</string>
+    <string name="about_author">Author: </string>
+    <string name="about_author_names" translatable="false">Tobias Neidig </string>
+    <string name="about_author_contributors"> and contributors.</string>
+    <string name="about_affiliation">In affiliation with</string>
+    <string name="more_info">More information can be found on:</string>
+    <string name="about_third_party_libs">The app uses <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart from Philipp Jahoda</a> (Apache 2 License).</string>
+    <string name="privacy_friendly">This application belongs to the Privacy Friendly Apps group developed by Technische Universität Darmstadt. Sourcecode licensed under GPLv3. Images copyright TU Darmstadt and Google Inc.</string>
+    <string name="github" translatable="false"><a href="https://github.com/SecUSo/privacy-friendly-activity-tracker">Github-Repo</a></string>
+    <string name="url"><a href="https://www.secuso.org/pfa">SECUSO-Website</a></string>
+
+    <!-- ReportFragment -->
+    <string name="month">월</string>
+    <string name="week">주</string>
+    <string name="day">일</string>
+    <string name="steps">걸음</string>
+    <string name="calories">카로리</string>
+    <string name="activity_summary_subtitle">운동상태</string>
+    <string name="activity_chart_summary_subtitle">운동상태상세정보</string>
+    <string name="summary_card_kilocalories">kcal</string>
+    <string name="summary_card_calories">cal</string>
+    <string name="correct_steps">걸음수 입력</string>
+    <string name="correct_steps_dialog_title">걸음수 입력</string>
+    <string name="correct_steps_dialog_message">정확한 걸음수를 입력하세요.</string>
+    <string name="hint_steps">걸음수</string>
+    <string name="pause_step_detection">Pause step detection</string>
+    <string name="continue_step_detection">Continue step detection</string>
+
+    <!-- HelpActivity -->
+    <string name="help_overview_heading">Overview</string>
+    <string name="help_intro">This app can count your steps in background, provides you an overview about your walked steps and allows you to define custom walking modes and notifications if the achievement of your daily step goal is in danger.</string>
+    <string name="help_functionality_step_counter_summary">The step counter counts your daily steps in background and can be disabled in the settings.</string>
+    <string name="help_functionality_notification_heading">Permanent Notification</string>
+    <string name="help_functionality_notification">Notification</string>
+    <string name="help_functionality_notification_summary">The permanent notification is necessary to keep the step counter alive in background. The content of the notification can be chosen in the settings.</string>
+    <string name="help_functionality_notification_delete">You can disable all notifications in system preferences.</string>
+    <string name="help_functionality_motivation_alert">Motivation alert</string>
+    <string name="help_functionality_motivation_alert_summary">The app can show you motivation alerts if the achievement of your daily step goal is in danger. You can define the criterion, the time of day and the notification texts.</string>
+    <string name="help_privacy_heading">Privacy Info</string>
+    <string name="help_permission_boot_heading">Permission: Receive Boot Completed</string>
+    <string name="help_permission_boot_description">is used to start the step counter and set the notifications at boot time. If the permission is not granted you have to start the app manually once after boot to activate the app.</string>
+    <string name="help_permissions_selection">The permissions used by Privacy Friendly Pedometer can not be managed by the user in any Android version.</string>
+    <string name="help_permission_wake_heading">Permission: Wake Lock</string>
+    <string name="help_permission_wake_description">is used to keep the CPU awake to count the steps in background.</string>
+    <string name="help_permission_gps_heading">Permission: Precise location</string>
+    <string name="help_permission_gps_description">is used to show your current walking speed on home screen. If the permission is not granted the walking speed will not be showed - there are no other implications.</string>
+
+    <!-- Preferences -->
+    <!-- general settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_group_title_personal_settings">Personalization</string>
+
+    <string name="pref_step_counter_enabled" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.step_counter_enabled</string>
+    <string name="pref_title_step_counter_enabled">Permanent step counter</string>
+    <string name="pref_summary_step_counter_enabled">The app counts your steps in background.</string>
+
+    <string name="pref_use_wake_lock" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.use_wake_lock</string>
+    <string name="pref_title_use_wake_lock">Keep processor awake</string>
+    <string name="pref_summary_use_wake_lock">On some devices the processor falls asleep and prevents counting steps. Enable this to keep the processor awake while counting steps - this may drain your battery!</string>
+
+    <string name="pref_use_wake_lock_during_training" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.use_wake_lock_during_training</string>
+    <string name="pref_title_use_wake_lock_during_training">Wake lock during training</string>
+    <string name="pref_summary_use_wake_lock_during_training">For better results during training mode keep processor awake. If app should keep the processor awake at any time this is automatically the case.</string>
+
+    <string name="pref_show_velocity" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.show_velocity</string>
+    <string name="pref_title_show_velocity">Show current velocity</string>
+    <string name="pref_summary_show_velocity">The app shows your current velocity in daily report. Access to your location is required to calculate the exact velocity.</string>
+
+    <string name="pref_default_daily_step_goal" translatable="false">10000</string>
+    <string name="pref_title_daily_step_goal">Personal daily step goal</string>
+    <string name="pref_unit_of_length" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.unit_of_length</string>
+    <string name="pref_title_unit_of_length">Unit of length</string>
+    <string-array name="pref_keys_unit_of_length">
+        <item>kilometers</item>
+        <item>miles</item>
+    </string-array>
+    <string-array name="pref_values_unit_of_length" translatable="false">
+        <item>km</item>
+        <item>mi</item>
+    </string-array>
+    <string name="unit_of_length_km">1|km|kilometers|km/h|1000|m</string><!-- 1km = 1km -->
+    <string name="unit_of_length_mi">0.621371|mi|miles|mph|5280|ft</string><!-- 1km = 0.621371 miles -->
+    <string name="pref_unit_of_energy" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.unit_of_energy</string>
+    <string name="pref_title_unit_of_energy">Unit of energy</string>
+    <string-array name="pref_keys_unit_of_energy">
+        <item>calories</item>
+        <item>joules</item>
+    </string-array>
+    <string-array name="pref_values_unit_of_energy" translatable="false">
+        <item>cal</item>
+        <item>J</item>
+    </string-array>
+
+    <string name="pref_explanation_weight_and_gender">To improve the calculation of the calories please set your weight and gender.</string>
+    <string name="pref_summary_notification_permanent">The permanent notification is shown when the app counts your steps in background. You can customize what the app should show you.</string>
+    <string name="pref_summary_accelerometer_threshold">The app uses the accelerometer of your device. To optimize the step detection adjust the sensitivity, please.</string>
+
+    <string name="pref_weight" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.weight</string>
+    <string name="pref_title_weight">Weight (kg)</string>
+    <string name="pref_default_weight" translatable="false">65.0</string>
+
+    <string name="pref_gender" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.gender</string>
+    <string name="pref_title_gender">Gender</string>
+    <string-array name="pref_keys_gender">
+        <item>female</item>
+        <item>male</item>
+    </string-array>
+    <string-array name="pref_values_gender" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_accelerometer_threshold" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.accelerometer_threshold</string>
+    <string name="pref_title_accelerometer_threshold">Sensitivity</string>
+    <string-array name="pref_keys_accelerometer_threshold">
+        <item>very high</item>
+        <item>higher</item>
+        <item>high</item>
+        <item>normal</item>
+        <item>low</item>
+        <item>lower</item>
+        <item>very low</item>
+    </string-array>
+    <string-array name="pref_values_accelerometer_threshold" translatable="false">
+        <item>0.125</item>
+        <item>0.25</item>
+        <item>0.50</item>
+        <item>0.75</item>
+        <item>1.00</item>
+        <item>1.25</item>
+        <item>1.50</item>
+    </string-array>
+    <string name="pref_accelerometer_steps_threshold" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.accelerometer_step_threshold</string>
+    <string name="pref_title_accelerometer_steps_threshold">Steps before counting starts</string>
+    <string name="pref_default_accelerometer_steps_threshold" translatable="false">10</string>
+    <!-- /general settings -->
+    <!-- notification settings -->
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_group_title_permanent_notification">Permanent Notification</string>
+    <string name="pref_group_title_motivation_alert">Motivation Alert</string>
+
+    <string name="pref_notification_permanent_show_steps" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.permanent_notification_show_steps</string>
+    <string name="pref_title_notification_permanent_show_steps">Show number of steps walked today</string>
+    <string name="pref_notification_permanent_show_distance" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.permanent_notification_show_distance</string>
+    <string name="pref_title_notification_permanent_show_distance">Show distance walked today</string>
+    <string name="pref_notification_permanent_show_calories" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.permanent_notification_show_calories</string>
+    <string name="pref_title_notification_permanent_show_calories">Show number of calories</string>
+
+    <string name="pref_notification_motivation_alert_enabled" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_enabled</string>
+    <string name="pref_title_notification_motivation_alert_enabled">Enable motivation alert</string>
+    <string name="pref_notification_motivation_alert_time" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_time</string>
+    <string name="pref_title_notification_motivation_alert_time">Motivation alert time</string>
+    <string name="pref_notification_motivation_alert_texts" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_texts</string>
+    <string name="pref_title_notification_motivation_alert_texts">Motivation notification texts</string>
+    <string name="pref_notification_motivation_alert_criterion" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.motivation_alert_criterion</string>
+    <string name="pref_title_notification_motivation_alert_criterion">Motivation alert criterion</string>
+    <string-array name="pref_keys_notification_motivation_alert_criterion">
+        <item>less than 90&#65285; of daily step goal</item>
+        <item>less than 70&#65285; of daily step goal</item>
+        <item>less than 50&#65285; of daily step goal</item>
+    </string-array>
+    <string-array name="pref_values_notification_motivation_alert_criterion" translatable="false">
+        <item>90</item>
+        <item>70</item>
+        <item>50</item>
+    </string-array>
+    <!-- /notification settings -->
+    <string name="pref_header_walking_modes">Walking modes</string>
+    <string name="pref_widget_data_set" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.widget_data_set_</string>
+    <string name="pref_distance_measurement_start_timestamp" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.distance_measurement_start_timestamp</string>
+    <string name="pref_hw_steps_on_last_save" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.hw_steps_on_last_save</string>
+    <!-- /Preferences -->
+
+    <!-- Will be removed on next update -->
+    <string name="pref_daily_step_goal" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.daily_step_goal</string>
+    <string name="notification_text_steps">%1$s of %2$s steps walked today.</string>
+    <string name="notification_text_distance">%1$.2f %2$s walked today.</string>
+    <string name="notification_text_calories">Burned %.2f kcal today.</string>
+    <string name="notification_text_default">Pedometer is active.</string>
+    <!-- /Will be removed on next update -->
+
+    <!-- others -->
+    <string name="action_calories">카로리</string>
+    <string name="action_distance">거리</string>
+    <string name="action_steps">걸음</string>
+    <string name="set">설정하기</string>
+    <string name="save">보관</string>
+    <string name="edit">편집</string>
+    <string name="delete">삭제</string>
+    <string name="operation_failed">Operation failed</string>
+    <string name="since">since</string>
+    <string name="okay">Okay</string>
+    <!-- /others -->
+
+    <!-- welcome dialog -->
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_text">Privacy Friendly Pedometer can count your steps in background and provides an overview about walked steps.</string>
+    <string name="slide_2_title">Customize</string>
+    <string name="slide_2_desc">To improve the calculation of the calories you have burned by walking please customize your personal settings.</string>
+    <string name="slide_2_desc_two">You can switch your current walking modes using the context menu in the toolbar.</string>
+    <string name="slide_3_title">Notifications</string>
+    <string name="slide_4_title">Widget</string>
+    <string name="slide_4_desc">Add a widget to your homescreen to stay up to date about your walked steps.</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <!-- /welcome dialog -->
+
+    <!-- motivation alert -->
+    <string-array name="pref_default_notification_motivation_alert_messages">
+        <item>Come on, it\'s time to walk!</item>
+    </string-array>
+    <string name="motivation_alert_empty">Set custom alert messages when the achievement of your daily step goal is in danger.\n\nThere will be no alert if no message exists.</string>
+    <string name="motivation_alert_input_title">Set motivation alert message</string>
+    <string name="motivation_alert_input_message">Set your own custom motivation alert. The app notifies you with one of your texts randomly.</string>
+    <string name="motivation_alert_input_empty">Empty motivation alerts are useless, aren\'t they?</string>
+    <string name="activity_title_motivation_alerts">Motivation alerts</string>
+    <string name="motivation_alert_notification_title">Step Counter</string>
+
+    <!-- walking modes -->
+    <string name="activity_title_walking_modes">Walking modes</string>
+    <string name="walking_mode_input_title">Walking mode</string>
+    <string name="walking_mode_input_message">Set your custom walking mode:</string>
+    <string name="walking_mode_at_least_one_is_required">At least one walking mode is required.</string>
+    <string name="walking_mode_cannot_delete_active_one">Cannot delete an active walking mode.</string>
+    <string name="walking_mode_set_active">Set as active</string>
+    <string name="walking_mode_menu_learn">Learn</string>
+    <string name="walking_mode_learning_distance_description">Distance to walk:</string>
+    <string name="walking_mode_learning_steps_description">Steps walked:</string>
+    <string name="walking_mode_learning_stop">End learning mode</string>
+    <string name="walking_mode_learning_description">The application can learn the distance per step. Please walk the given distance and press end if you finished.</string>
+    <string name="pref_walking_mode_learning_active" translatable="false">org.secuso.privacyfriendlyactivitytracker.pref.walking_mode_learning_active</string>
+    <string name="step_length">Step length:</string>
+    <string name="walking_mode_active_ext"> (active)</string>
+    <string name="walking_mode_input_empty">Name and step length are required. Please fill in!</string>
+    <string name="hint_walking_mode_name">Name</string>
+    <string name="hint_walking_mode_step_length">Step length (Meters)</string>
+    <string name="step_running">달리기</string>
+    <string name="step_walking">걷기</string>
+    <string-array name="pref_default_walking_mode_names">
+        <item>Walking</item>
+        <item>Running</item>
+    </string-array>
+    <string-array name="pref_default_walking_mode_step_lenghts" translatable="false">
+        <item>0.5</item><!-- step length in meters -->
+        <item>0.7</item>
+    </string-array>
+
+    <string name="training_overview_empty">It seems like you didn\'t used the training functionality, yet. It\'s time to start your training!</string>
+    <string name="training_input_message" />
+    <string name="training_input_title">Training session</string>
+    <string name="activity_title_training">Training</string>
+    <string name="hint_training_description">Description</string>
+    <string name="hint_training_title">Title</string>
+    <string name="hint_training_feeling">Feeling:</string>
+    <string name="training_card_calories">kcal</string>
+    <string name="training_card_distance_km">km</string>
+    <string name="training_card_duration">h</string>
+    <string name="training_velocity">km/h</string>
+    <string name="training_stop_button">End training now</string>
+    <string name="training_default_title">%1$s %4$02d.%3$02d.%2$04d</string>
+    <string name="activity_summary_chart_legend_stepgoal">Stepgoal</string>
+    <string name="widget_config_data_set_title">Which data should be displayed?</string>
+    <string name="action_distance_measurement">Distance Measurement</string>
+    <string name="distance_measurement_stop_button">Stop distance measurement</string>
+    <string name="distance_measurement_start_button">Start distance measurement</string>
+    <string name="joules">J</string>
+    <string name="kilojoules">kJ</string>
+    <string name="slide_5_title">Step Detection</string>
+    <string name="slide_5_desc">The app detects your steps based on different algorithms. On some devices you can define the sensivity of step detection in settings. In addition to that you can add steps you walked without the app or correct the stepcount on daily activity chart.</string>
+    <string name="slide_3_desc">Define custom walking modes and notifications if the achievement of your daily step goal is in danger.</string>
+    <string name="slide_2_desc_three">In the settings you can define your own walking modes with different step lengths.</string>
+    <string name="help_walkingmodes_heading">Walking Modes</string>
+    <string name="help_walkingmodes_selection">You can define your own walking modes like \'Running\' or \'Walking\' in the preferences. Each walking mode has its own step length.</string>
+    <string name="help_training_heading">Training Sessions</string>
+    <string name="help_training_selection">The training sessions can be used to track your training performance. Each session tracks e.g. the training duration, the walked steps and distance.</string>
+    <string name="help_distancemeasurement_heading">Distance Measurement</string>
+    <string name="help_distancemeasurement_selection">The distance measurement feature allows you to measure the distance between the button press \'Start\' and \'Stop\'. The data will not be stored after app restarts. To persist the data you can use the training sessions.</string>
+    <string name="help_correctsteps_heading">Correct steps manually</string>
+    <string name="help_correctsteps_selection">You can modify the detected daily steps in daily report view. This allows you to add steps you walked without the app or to correct the detected number of steps.</string>
+    <string name="slide_5_desc_two">Click on \'Preferences\' to set your step size and customize your personal data.</string>
+
+    <!--    main layout strings-->
+    <string name="main_exercise_title">운동 기록</string>
+    <string name="main_exercise_desc">활기차고, 건강하게</string>
+
+    <string name="main_blood_pressure_title">혈압</string>
+    <string name="main_blood_pressure_desc">혈압을 주시하세요</string>
+
+    <string name="main_heart_rate_title">심박수</string>
+    <string name="main_heart_rate_desc">하루종일 심박수를 확인합니다</string>
+
+    <string name="main_water_title">물</string>
+    <string name="main_water_desc">매일 물 섭취량을 기록하세요</string>
+
+    <string name="main_weight_title">몸무게</string>
+    <string name="main_weight_desc">체중을 관리하세요</string>
+
+    <string name="main_circlebar_steps">걸음</string>
+
+    <!--  weight layout strings  -->
+    <string name="add_record">기록 추가</string>
+    <string name="history">기록</string>
+
+    <string name="weight_date">날자</string>
+    <string name="weight_time">시간</string>
+    <string name="date_format1">%1$d-%2$d-%3$d</string>
+    <string name="date_format2">%1$d. %2$d. %3$d</string>
+    <string name="date_format3">%1$d/%2$d/%3$d</string>
+    <string name="date_format4">%1$d/%2$d</string>
+    <string name="date_format5">%1$d년 %2$s</string>
+    <string name="date_format6">%1$s %2$02d일 - %3$02d일</string>
+    <string name="date_format7">%1$s %2$02d일</string>
+    <string name="date_format8">%1$s %2$02d일 - %3$s %4$02d일</string>
+    <string name="date_format9">%1$d년 %2$s - %3$d년 %4$s</string>
+    <string name="date_format10">%1$d년</string>
+    <string name="datetime_format">%1$d/%2$d/%3$d %4$02d:%5$02d %6$s</string>
+    <string name="time_format">%1$d : %2$d</string>
+    <string name="set_time">시간 설정</string>
+    <string name="dialog_confirm">확인</string>
+    <string name="dialog_cancel">취소</string>
+    <string name="kilogram">kg</string>
+    <string name="percent">%</string>
+    <string name="body_fat_rate">체지방률</string>
+    <string name="done">완료</string>
+    <string name="error_msg">현재 시간보다 빠른 시간을 입력할수 없습니다.</string>
+    <string name="underweight">저체증</string>
+    <string name="healthy">건강</string>
+    <string name="overweight">과체증</string>
+    <string name="obese">비만</string>
+    <string name="severe_obese">심한 비만</string>
+    <string name="weight_goal">목표 몸무게</string>
+    <string name="set_weight_goal">목표 몸무게 설정</string>
+    <string name="adjust_goal">목표 변경</string>
+    <string name="set_new_goal">새 목표 설정</string>
+    <string name="make_weight_goal_tip">달성할 목표를 세우십시오.</string>
+    <string name="success_goal">목표달성을 축하합니다!</string>
+    <string name="closer_goal">목표에 %1$.1fkg 더 가까워졌습니다!</string>
+    <string name="gain_goal">여전히 %1$.1f kg 늘여야 합니다</string>
+    <string name="lose_goal">여전히 %1$.1f kg 줄여야 합니다</string>
+    <string name="note">참고</string>
+    <string name="start_at">시작 몸무게: %1$s kg</string>
+    <string name="goal">목표: %1$s kg</string>
+    <string name="record">기록</string>
+    <string name="more">더 보기</string>
+    <string name="with_kilogram">%.1f kg</string>
+    <string name="with_percent">%.1f \%%</string>
+    <string name="average">평균</string>
+    <string name="monthly_average">월간 평균</string>
+    <string name="empty_value">--</string>
+    <string name="min_max">%.1f-%.1f</string>
+    <string name="changes">변경사항</string>
+    <string name="select_all">모두 선택</string>
+    <string name="deselect_all">모두 선택 취소</string>
+    <string name="avg_text">평균 %.1f kg</string>
+    <string name="nothing_selected">선택 항목 없음</string>
+    <string name="one_item_selected_text">%1$d개 항목 선택됨</string>
+    <string name="multi_item_selected_text">%1$d개 항목 선택됨</string>
+    <string name="delete_data_desc">자료를 삭제하시겠습니까?</string>
+    <string name="ok">확인</string>
+    <string name="no_weight_data">몸무게 자료 없음</string>
+    <string name="about_bmi">BMI(체질량지수) 정보</string>
+    <string name="bmi_desc">체질량지수(BMI)는 체중(kg)을 키(m)의 제곱으로 나눈 수치입니다. 례를 들어 키가 1.75m이고 체중이 70kg인 성인의 체질량지수는 22.9입니다. 체질량지수 범위는 나이, 성별, 근육량에 따라 달라집니다.</string>
+    <string name="bmi_formula">체질량지수 계산: 65.0 kg/1.70 ㎡ = 22.5</string>
+    <string name="about_body_fat_percentage">체지방률 정보</string>
+    <string name="body_fat_percentage_desc">체지방률은 체중에 대한 체지방의 비률로써, 체지방과 지방제외체중을 구분하지 않는 BMI보다 신체구성에 대해 더 많은 정보를 제공합니다. 체지방률은 여러가지 방법으로 알아낼수 있습니다.
+    체지방률은 성별, 나이, 키, 체중에 따라 달라집니다.</string>
+    <string name="body_fat_percentage_range_mean">체지방률 평균 범위</string>
+    <string name="classification">분류</string>
+    <string name="women_fat_percent">녀성(지방지률)</string>
+    <string name="men_fat_percent">남성(지방지률)</string>
+    <string name="essential_fat">최소 권장</string>
+    <string name="essential_women_percent">10.0-13.9%</string>
+    <string name="essential_men_percent">2.0-5.9%</string>
+    <string name="athletes">운동선수</string>
+    <string name="athletes_women_percent">14.0-20.9%</string>
+    <string name="athletes_men_percent">6.0-13.9%</string>
+    <string name="fitness">건강한</string>
+    <string name="fitness_women_percent">21.0-24.9%</string>
+    <string name="fitness_men_percent">14.0-17.9%</string>
+    <string name="fat_average">표준</string>
+    <string name="average_women_percent">25.0-31.9%</string>
+    <string name="average_men_percent">18.0-24.9%</string>
+    <string name="obese_women_percent">32% 이상</string>
+    <string name="obese_men_percent">25% 이상</string>
+    <string name="fat_diff_desc">남성과 녀성에게 필요한 체지방은 다릅니다.\n\n체지방률을 측정할때나 건강한 체지방률의 유지를 위한 조언을 받을 때는 항상 의사에게 문의하십시오.</string>
+    <string name="set_new_goal_suggestion_desc">목표에 도달하였습니다. 새 목표를 설정하십시오.</string>
+
+    <string name="systolic">수축기</string>
+    <string name="diastolic">확장기</string>
+    <string name="millimeter_of_mercury">mmHg</string>
+    <string name="pulse">맥박</string>
+    <string name="beats_per_minute">bpm</string>
+    <string name="blood_pressure_format">%1$d/%2$d</string>
+    <string name="blood_pressure_format1">%1$d/%2$d mmHg</string>
+    <string name="blood_pressure_error_msg">입력오유, 저혈압값이 고혈앖값보다 높습니다.</string>
+    <string name="severe_hypertension">중증 고혈압</string>
+    <string name="moderate_hypertension">중간 고혈압</string>
+    <string name="mild_hypertension">가벼운 고혈압</string>
+    <string name="normal_high">정상/높음</string>
+    <string name="normal">보통</string>
+    <string name="hypotension">저혈압</string>
+    <string name="no_blood_pressure_data">혈압자료가 존재하지 않습니다.</string>
+    <string name="low">낮음</string>
+    <string name="high">높음</string>
+    <string name="blood_help_desc">혈압은 혈액이 혈관속을 흐를때 혈관벽에 미치는 압력입니다. 수축기 혈압은 혈액을 내보내기 위해 심장이 수축할때의 혈압이고 이완기 혈압은 심장박동사이에 심장이 뛸때의 혈압입니다.\n\n
+    20살이상 성인의 경우 일반적으로 120/80mmHg이하를 정상 범위로 분류합니다.\n\n
+    고혈압환자의 경우 집에서 혈압을 측정하는것이 중요합니다. 집에서 정기적으로 혈압을 측정한다면 더욱 일관적인 측정결과를 얻을수 있도록 동일한 시간에 측정하십시오. 혈압측정 최소 30분전에는 흡연, 운동을 피하십시오.</string>
+
+    <string name="measure">측정</string>
+    <string name="measure_heart_rate">심박수 측정</string>
+    <string name="cameraPermissionRequired">심박수측정을 위해 카메라권한이 필요합니다.</string>
+    <string name="measuring">측정중…</string>
+    <string name="stay_measure">움직이거나 말하지 마십시오</string>
+    <string name="check_finger">손가락이 카메라 우에 있는지 확인하십시오</string>
+    <string name="place_finger">손가락을 카메라 우에 대십시오</string>
+    <string name="finished">완료됨</string>
+    <string name="my_heart_rate">내 심박수</string>
+    <string name="average_resting_range">안정시 심박수 평균 범위</string>
+    <string name="select_current_status">현재 상태 선택</string>
+    <string name="notes">남길말</string>
+    <string name="resting_for_measure_heart_rate">정확하게 측정하려면 먼저 10분동안 휴식을 취하십시오.</string>
+    <string name="detail">상세</string>
+    <string-array name="status_title_array">
+        <item name="general">평상시</item>
+        <item name="resting">안정</item>
+        <item name="after_exercise">운동 후</item>
+        <item name="before_exercise">운동 전</item>
+        <item name="sad">슬픔</item>
+        <item name="excited">흥분</item>
+        <item name="tired">피곤</item>
+        <item name="in_love">설렘</item>
+        <item name="surprised">놀람</item>
+        <item name="angry">화남</item>
+        <item name="fearful">무서움</item>
+        <item name="unwell">건강상태 나쁨</item>
+    </string-array>
+
+    <string name="milliliter">ml</string>
+    <string name="glasses">고뿌</string>
+    <string name="water_format">%1$d ml</string>
+    <string name="target_format">/%1$d</string>
+    <string name="daily_water_intake">하루 물 섭취량 (고뿌)</string>
+    <string name="water_track_desc">실제 물 섭취량을 기록해 보세요. 한고뿌는 250ml입니다.</string>
+    <string name="set_target">목표 설정</string>
+    <string name="on">사용 중</string>
+    <string name="off">사용 안함</string>
+    <string name="water_desc1">충분한 수분섭취는 건강관리의 시작입니다</string>
+    <string name="water_desc2">하루 목표 물 섭취량을 설정하고 실제 섭취량을 기록해보세요. 한고뿌는 250ml입니다.</string>
+    <string name="average_water_intake">평균 물 섭취량</string>
+    <string name="no_data_desc">기록된 물 섭취량 자료가 없습니다.</string>
+
+    <string name="add">추가</string>
+    <string name="stats">통계</string>
+    <string name="add_workout_record">운동 기록 추가</string>
+    <string name="choose_activity">운동 선택</string>
+    <string name="duration">운동 시간</string>
+    <string name="distance">거리</string>
+    <string name="start_time">시작 시간</string>
+    <string name="duration_format">%1$02d:%2$02d:%3$02d</string>
+    <string name="kilometer">km</string>
+    <string name="meter">m</string>
+    <string name="distance_range_limit_kilometer">거리 범위는 0.1–500km입니다.</string>
+    <string name="distance_range_limit_meter">거리 범위는 %1.1f – %2$dm입니다.</string>
+    <string name="with_kilometer">%.2f km</string>
+    <string name="with_meter">%.2f m</string>
+    <string name="with_meter_integer">%d m</string>
+    <string name="outdoor_run">실외 달리기</string>
+    <string name="outdoor_walk">실외 걷기</string>
+    <string name="outdoor_cycle">자전거타기</string>
+    <string name="indoor_run">실내 달리기</string>
+    <string name="pool_swim">실내 수영</string>
+    <string name="complete_workout_warning">정보를 완성하세요.</string>
+    <string name="time_overflow_warning">운동시간을 기준으로 계산된 시작시간은 완료시간보다 빨라야 합니다.</string>
+    <string name="average_pace">평균 pace</string>
+    <string name="average_speed">평균 속도</string>
+    <string name="average_pace_format">%1$02d"'"%2$02d\"</string>
+    <string name="kilometer_with_slash">/km</string>
+    <string name="kilometer_pace_unit">%1$s /km</string>
+    <string name="kilometer_per_hour">km/h</string>
+    <string name="kcal">kcal</string>
+    <string name="performance">성과</string>
+    <string name="swim_average_pace_unit"> /100 m</string>
+    <string name="swim_pace_unit">%1$s /100 m</string>
+    <string name="swolf">Swolf</string>
+    <string name="swolf_desc">SWOLF는 수영의 호률성을 측정하는 방법으로 해당거리(50m 수영장이 표준입니다.)를 수영하는데 걸린 시간과 수영중의 젓기회수를 비교하여 거리당으로 계산됩니다.
+        값이 작을수록 높은 효률성을 의미합니다.
+    </string>
+    <string name="running">달리기(km)</string>
+    <string name="walking">걷기(km)</string>
+    <string name="cycling">자전거(km)</string>
+    <string name="swimming">수영(m)</string>
+    <string name="distance_unit_kilometer">거리(km)</string>
+    <string name="distance_unit_meter">거리(m)</string>
+    <string name="calorie_unit">카로리(kcal)</string>
+    <string name="times">회수</string>
+    <string name="times_unit">번</string>
+    <string name="exercise_total_default_value">0.00</string>
+    <string name="total_distance">총 거리</string>
+    <string name="total_duration">총 시간</string>
+    <string name="total_calories">총 카로리</string>
+    <string name="minute">분</string>
+    <string name="year">년</string>
+    <string name="total">전체</string>
+    <string name="no_exercise_records">운동 기록 없음</string>
+
+    <string-array name="exercise_type_array">
+        <item name="all">모두</item>
+        <item name="running">달리기</item>
+        <item name="walking">걷기</item>
+        <item name="cycling">자전거타기</item>
+        <item name="swimming">수영</item>
+    </string-array>
+
+    <string-array name="workout_type_array">
+        <item name="running">달리기</item>
+        <item name="walking">걷기</item>
+        <item name="cycling">자전거타기</item>
+        <item name="swimming">수영</item>
+    </string-array>
+
+    <string name="loading">읽기중...</string>
+
+    <string name="main_cycle_title">생리 주기 달력</string>
+    <string name="main_cycle_desc">생리 주기 추적</string>
+    <string name="cycle">생리 주기</string>
+    <string name="records">기록</string>
+    <string name="record_symptoms">증상 기록</string>
+    <string name="flow">생리량</string>
+    <string name="pain">통증</string>
+    <string name="physical_conditions">신체적 증상</string>
+    <string name="flow_intensity_light">적음</string>
+    <string name="flow_intensity_average">보통</string>
+    <string name="flow_intensity_heavy">많음</string>
+    <string name="pain_intensity_light">약함</string>
+    <string name="pain_intensity_average">보통</string>
+    <string name="pain_intensity_severe">심함</string>
+    <string name="cramps">생리통</string>
+    <string name="breast_pain">가슴 통증</string>
+    <string name="headache">두통</string>
+    <string name="dizziness">어지럼증</string>
+    <string name="acne">여드름</string>
+    <string name="back_pain">허리 통증</string>
+    <string name="nausea">메스꺼움</string>
+    <string name="tiredness">피로감</string>
+    <string name="bloating">속이 불편함</string>
+    <string name="period_started">생리 시작</string>
+    <string name="period_ended">생리가 끝났습니까?</string>
+    <string name="wait_period_desc">증상을 기록하려면 다음 생리일까지 기다리십시오</string>
+
+    <string-array name="flow_intensity_array">
+        <item name="light">적음</item>
+        <item name="average">보통</item>
+        <item name="heavy">많음</item>
+    </string-array>
+
+    <string-array name="pain_intensity_array">
+        <item name="light">약함</item>
+        <item name="average">보통</item>
+        <item name="heavy">심함</item>
+    </string-array>
+
+    <string-array name="symptom_conditions">
+        <item name="cramps">생리통</item>
+        <item name="breast_pain">가슴 통증</item>
+        <item name="headache">두통</item>
+        <item name="dizziness">어지럼증</item>
+        <item name="acne">여드름</item>
+        <item name="back_pain">허리 통증</item>
+        <item name="nausea">메스꺼움</item>
+        <item name="tiredness">피로감</item>
+        <item name="bloating">속이 불편함</item>
+    </string-array>
+
+    <string name="status_empty_desc">자료를 생성하려면 생리 정보를 기록하십시오</string>
+    <string name="period_day_status">생리 %1$d일</string>
+    <string name="period_closer_status_one">1일후 생리 시작</string>
+    <string name="period_closer_status">%1$d일후 생리 시작</string>
+    <string name="predicted_period_day_status">생리 예정 %1$d일</string>
+    <string name="predicted_period_closer_status_one">1일후 시작할 예정입니다</string>
+    <string name="predicted_period_closer_status">%1$d일후 시작할 예정입니다</string>
+    <string name="fertile_closer_status_one">1일후 가임기 시작</string>
+    <string name="fertile_closer_status">%1$d일후 가임기 시작</string>
+    <string name="fertile_day_status">가임기 %1$d일</string>
+
+    <string name="main_period_day_status">생리 %1$d 일</string>
+    <string name="main_predicted_period_day_status">생리 예정 %1$d 일</string>
+    <string name="main_predicted_period_closer_status_one">1 일후 시작할 예정</string>
+    <string name="main_predicted_period_closer_status">%1$d 일후 시작할 예정</string>
+    <string name="main_fertile_closer_status_one">1 일후 가임기 시작</string>
+    <string name="main_fertile_closer_status">%1$d 일후 가임기 시작</string>
+    <string name="main_fertile_day_status">가임기 %1$d 일</string>
+
+    <string name="total_days">전체: %1$d일</string>
+    <string name="impossible_modify_cycle_desc">180일보다 오래된 자료는 수정할수 없습니다.</string>
+    <string name="period">생리</string>
+    <string name="fertile_window">가임기</string>
+    <string name="predict_period">생리 예정일</string>
+    <string name="period_length_limit_desc">생리 기간은 설정된 생리 주기를 초과할수 없습니다.</string>
+    <string name="period_cycle_short_desc">생리 주기가 너무 짧은것 같습니다.</string>
+    <string name="edit_period">생리 정보 편집</string>
+    <string name="period_length">생리 기간</string>
+    <string name="cycle_length">생리 주기</string>
+    <string name="cycle_calendar_desc">참고: 생리 주기 달력은 알고리듬을 리용하여 사용자가 기록한 정보를 기반으로 다음 생리 기간 및 가임 기간을 예측합니다.
+        이 자료(생리 기간 및 생리 주기)는 참고용입니다.</string>
+    <string name="with_days">%1$d일</string>
+    <string name="average_period">평균 기간(일)</string>
+    <string name="average_cycle">평균 주기(일)</string>
+    <string name="current_cycle">현재 주기</string>
+    <string name="average_cycle_length">%1$d일(평균 기간)</string>
+    <string name="fill_out_period_data">생리 자료를 입력하세요</string>
+    <string name="predict_next_data">다음 생리 기간을 예측합니다.</string>
+    <string name="last_period">마지막 생리 시작일</string>
+    <string name="select">선택</string>
+    <string name="complete_cycle_initial_warning">생리 자료를 완성하세요.</string>
+    <string name="record_period">생리 기록</string>
+    <string name="no_cycle_data_desc">자료 없음</string>
+    <string name="add_cycle_desc">추적을 시작하려면 일부 자료를 추가하십시오.</string>
+    <string name="cycle_terminology">1. 용어 설명</string>
+    <string name="menstruation">월경</string>
+    <string name="menstruation_content">월경은 생리로도 알려져 있으며 자궁 내막에서 정기적으로 혈액과 조직이 배출되는 현상입니다.</string>
+    <string name="period_content">생리는 보통 한달에 한번 발생하며 2~7일간 지속될수 있습니다. 평균생리기간은 3~5일입니다.</string>
+    <string name="fertile_window_content">가임기는 배란일 5일전부터 배란일 4일후까지 총 약 10일간 지속됩니다. 이 기간에는 임신 가능성이 더 높습니다.</string>
+    <string name="cycle_important_information">2. 중요한 정보</string>
+    <string name="cycle_meaning">생리주기란 무엇인가?</string>
+    <string name="cycle_content">생리(월경)는 생리주기에 발생하는 현상의 일부입니다. 생리는 신체가 자궁 내막에서 혈액과 조직을 배출하는 생리주기현상의 일부입니다. 생리주기는 생리일 첫날부터 다음 생리일 첫날까지를 의미합니다.
+    생리주기는 첫 5~7년 이후 규칙적으로 발생합니다.</string>
+    <string name="cycle_length_meaning">평균 생리주기는 얼마나 되나요?</string>
+    <string name="cycle_length_content">생리주기는 사람마다 다릅니다. 평균주기는 28일입니다. 생리는 보통 정확한 날자에 시작하지 않으며 일반적으로 7일전이나 후에 시작합니다. 생리는 2~7일간 계속되며 평균 3~5일입니다.</string>
+    <string name="cycle_phases">단계</string>
+    <string name="cycle_phases_content">월경주기는 여러 단계로 구성됩니다. 이 단계는 란소주기와 자궁주기인 두가지 과정에 따라 구분됩니다. 란소주기는 란포기, 배란 및 황체기로 구성됩니다. 자궁주기에는 월경, 증식기, 분비기가 있습니다.\n
+    참고: 배란은 단계는 아니지만 단계를 구분하는 과정으로 간주됩니다.\n\n
+    일반적으로 란포기는 생리 첫날에 시작하여 배란일에 완료됩니다. 생리는 란포기 초기에 발생합니다. 란포는 생리중 성숙하기 시작하고 란포기의 주요과정은 출혈이 멈춘후에 발생합니다. 이 기간에는 더 많은 에스트로겐이 생성되고 자궁은 잠재적인 수정에 대비합니다.
+    이 기간에는 분비물이 없습니다. 배란이 이 단계의 완료와 다음 단계의 시작을 의미합니다.\n\n
+    배란일은 란자가 배출되는 날입니다. 일반적인 상황에서 다음 배란은 다음 생리시작일로부터 14~16일후에 발생합니다. 임신가능성은 배란전 5일간 가장 높으며 이 기간을 가임기라고 부릅니다.\n\n
+    배란후의 단계는 황체기라고 부릅니다. 란소는 호르몬에 의해 자극되여 황체형성호르몬을 분비합니다. 수정이 일어나지 않으면 두꺼워진 자궁벽이 떨어져 나가면서 생리가 시작됩니다. 이는 현재 생리주기의 끝이자 다음 주기의 시작을 의미합니다.</string>
+    <string name="cycle_predictions">3. 예측</string>
+    <string name="period_predictions">생리 예측</string>
+    <string name="period_predictions_content">예측은 개인자료(개인의 평균생리기간 및 주기 등)를 기초로 얻습니다. 생리주기는 추적하는데 도움이 되도록 이 자료를 기초로 미리 알림이 전송됩니다.</string>
+
+    <string name="change_health_item_order_desc">순서를 변경하려면 왼쪽에 있는 아이콘을 눌러서 끌기하십시오</string>
+
+    <string name="exercise">운동</string>
+
+    <string name="goals">목표</string>
+    <string name="gender">성별</string>
+    <string name="date_of_birth">생년월일</string>
+    <string name="height">키</string>
+    <string name="walking_step_length">보폭(걷기)</string>
+    <string name="running_step_length">보폭(달리기)</string>
+    <string name="daily_notification_time">매일 알림 시간</string>
+    <string name="step_goal">운동목표</string>
+    <string name="water_goal">하루 물 섭취량</string>
+    <string name="male">남자</string>
+    <string name="female">녀자</string>
+    <string name="exercise_training_sensor_desc">전화기의 운동감지기를 리용하여 자료를 기록합니다. 자료정확도를 개선하기 위해 전화기를 팔에 부착해 주십시오.</string>
+    <string name="notification_label">알림</string>
+    <string name="pause">일시중지</string>
+    <string name="paused">(중지됨)</string>
+    <string name="start">시작</string>
+    <string name="training_finish_warning">끝내려면 중지단추를 길게 누르십시오.</string>
+    <string name="continue_training">계속하기</string>
+    <string name="end">끝내기</string>
+    <string name="training_end_warning_desc">이동거리가 충분하지 않아 기록을 생성할수 없습니다. 운동을 끝내겠습니까?</string>
+    <string name="speed">속도 (km/h)</string>
+    <string name="stop_touch_hint">끝까지 길게 누르십시오</string>
+
+    <string name="with_steps">%1$d 걸음</string>
+
+    <string name="step_running_mode_change_note">달리기 방식으로 설정되였습니다.</string>
+    <string name="step_walking_mode_change_note">걷기 방식으로 설정되였습니다.</string>
+
+    <string name="touch_again_exit_app">다시 눌러 끝냅니다.</string>
+</resources>

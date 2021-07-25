@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".weight.WeightHelpActivity">
+
+    <include
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_h"
+            android:layout_marginEnd="@dimen/layout_margin_h"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:layout_marginBottom="10dp"
+                android:text="@string/about_bmi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="@string/bmi_desc" />
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:layout_marginBottom="10dp"
+                android:text="@string/bmi_formula" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bmi_visual_left_bg" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="10dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="8"
+                        android:background="#00c864"
+                        tools:ignore="NestedWeights" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="14dp"
+                        android:background="#455a64" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="5"
+                        android:background="#00c864"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="10dp"
+                    android:background="@color/white" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:background="#ff8c00" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="10dp"
+                    android:background="@color/white" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bmi_visual_right_bg" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18.5" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="11dp"
+                    android:text="30" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/underweight"
+                    android:gravity="center_horizontal"
+                    android:textColor="#82d2e3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/normal"
+                    android:gravity="center_horizontal"
+                    android:textColor="#00c864" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/overweight"
+                    android:gravity="center_horizontal"
+                    android:textColor="#ff8c00" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/obese"
+                    android:gravity="center_horizontal"
+                    android:textColor="#e34646" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:layout_marginBottom="10dp"
+                android:text="@string/about_body_fat_percentage" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="@string/body_fat_percentage_desc" />
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:layout_marginBottom="10dp"
+                android:text="@string/body_fat_percentage_range_mean" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/classification" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/women_fat_percent" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/men_fat_percent" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/essential_fat" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/essential_women_percent" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/essential_men_percent" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/athletes" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/athletes_women_percent" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/athletes_men_percent" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/fitness" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/fitness_women_percent" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/fitness_men_percent" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/fat_average" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/average_women_percent" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/average_men_percent" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/obese" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/obese_women_percent" />
+                    <TextView
+                        style="@style/HelpTableItemStyle"
+                        android:text="@string/obese_men_percent" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:text="@string/fat_diff_desc" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

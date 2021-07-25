@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:rcBackgroundColor="#0A000000"
+    app:rcProgressColors="@array/sample_progress_gradient"
+    app:rcRadius="80dp"
+    app:rcReverse="false"
+    app:rcSecondaryProgressColor="#40009688"
+    app:rcTextPositionPriority="inside"
+    app:rcTextInsideGravity="start"
+    app:rcTextProgressSize="10sp"
+    app:rcTextProgressMargin="5dp"
+    app:rcEndTextProgressColor="#111111" />

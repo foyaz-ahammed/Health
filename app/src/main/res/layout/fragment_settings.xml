@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.SettingsFragment">
+
+    <include
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/goals"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/goals" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/history_divider" />
+
+    <LinearLayout
+        android:id="@+id/gender"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/gender" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/gender_text"
+            style="@style/SettingsItemTitleStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/SettingsItemDividerStyle" />
+
+    <LinearLayout
+        android:id="@+id/birth"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/date_of_birth" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/birth_text"
+            style="@style/SettingsItemTitleStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/SettingsItemDividerStyle" />
+
+    <LinearLayout
+        android:id="@+id/height"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/height" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/height_text"
+            style="@style/SettingsItemTitleStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/history_divider" />
+
+    <LinearLayout
+        android:id="@+id/walking_length"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/walking_step_length" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/walking_length_text"
+            style="@style/SettingsItemTitleStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/SettingsItemDividerStyle" />
+
+    <LinearLayout
+        android:id="@+id/running_length"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/running_step_length" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/running_length_text"
+            style="@style/SettingsItemTitleStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/history_divider" />
+
+    <LinearLayout
+        android:id="@+id/notification_time"
+        style="@style/SettingsItemStyle"
+        >
+
+        <TextView
+            style="@style/SettingsItemTitleStyle"
+            android:text="@string/daily_notification_time" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/notification_time_text"
+            style="@style/SettingsItemTitleStyle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+</LinearLayout>

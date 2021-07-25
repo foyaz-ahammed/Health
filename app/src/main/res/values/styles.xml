@@ -1,0 +1,280 @@
+<!--
+    Privacy Friendly Pedometer is licensed under the GPLv3.
+    Copyright (C) 2017  Tobias Neidig
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+<!--        <item name="android:popupMenuStyle">@style/RoundedCorner</item>-->
+        <item name="popupMenuStyle">@style/RoundedCorner</item>
+<!--        <item name="popupWindowStyle">@style/RoundedCorner</item>-->
+<!--        <item name="textAppearanceLargePopupMenu">@style/popupMenuTextAppearanceSmall</item>-->
+<!--        <item name="android:textAppearanceLargePopupMenu">@style/popupMenuTextAppearanceSmall</item>-->
+<!--        <item name="textAppearanceSmallPopupMenu">@style/popupMenuTextAppearanceLarge</item>-->
+<!--        <item name="android:textAppearanceSmallPopupMenu">@style/popupMenuTextAppearanceLarge</item>-->
+        <item name="android:alertDialogTheme">@style/AppTheme.AlertDialog</item>
+    </style>
+
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.DatePickerDialog" parent="AppTheme.Dialog">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="AppTheme.AlertDialog" parent="AppTheme.Dialog">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="CardViewPrimaryTitle" parent="@android:style/TextAppearance.Large">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="CardViewSubTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/middlegrey</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CardViewBody">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
+    <style name="SimpleImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="popupMenuTextAppearanceSmall" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="popupMenuTextAppearanceLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="PopupMenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="PreferencesTheme" parent="AppTheme">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorSecondary">@color/darkgrey</item>
+    </style>
+
+    <style name="SplashTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="MainItemContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">10</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/main_background_color</item>
+    </style>
+
+    <style name="MainItemStyle">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">220dp</item>
+        <item name="android:minWidth">0dip</item>
+        <item name="android:minHeight">0dip</item>
+        <item name="android:layout_weight">5</item>
+        <item name="layout_columnWeight">1</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingStart">50dp</item>
+        <item name="android:paddingEnd">50dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginBottom">@dimen/button_bottom_margin</item>
+    </style>
+
+    <style name="ExerciseActivityPickerGridStyle">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">0dip</item>
+        <item name="android:minWidth">0dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="layout_columnWeight">1</item>
+        <item name="layout_rowWeight">1</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <style name="ExerciseActivityPickerTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <declare-styleable name="TriangularIndicatorBar">
+        <attr name="enable_level_text" format="boolean" />
+    </declare-styleable>
+
+    <style name="SymptomsItemStyle">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:minHeight">0dip</item>
+        <item name="android:minWidth">0dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="layout_columnWeight">1</item>
+        <item name="layout_rowWeight">1</item>
+        <item name="android:onClick">onClick</item>
+        <item name="borderWidth">0.5dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="RoundedCorner" parent="Theme.MaterialComponents.DayNight">
+        <item name="actionOverflowMenuStyle">@style/popupOverflowMenu</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView</item>
+    </style>
+
+    <style name="SpinnerPopupTheme"  parent="Theme.MaterialComponents.DayNight">
+        <item name="android:dropDownListViewStyle">@style/DropDownListView</item>
+    </style>
+
+    <style name="DropDownListView">
+        <item name="android:listSelector">@drawable/ripple_round_effect</item>
+    </style>
+
+    <style name="popupOverflowMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/round_rect_background</item>
+    </style>
+
+    <style name="PopupStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/round_rect_background</item>
+        <item name="popupMenuStyle">@style/RoundedCorner</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView</item>
+    </style>
+
+    <style name="datePickerStyle" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:headerBackground">@color/transparent</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="SettingsItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/layout_margin_h</item>
+        <item name="android:paddingEnd">@dimen/layout_margin_h</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:background">@drawable/picker_background</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+    <style name="SettingsItemTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginEnd">5dp</item>
+    </style>
+
+    <style name="SettingsItemDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.3dp</item>
+        <item name="android:layout_marginStart">@dimen/layout_margin_h</item>
+        <item name="android:layout_marginEnd">@dimen/layout_margin_h</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="CycleHelpStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CycleHelpStyle.TitleStyle">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="CycleHelpStyle.SubTitleStyle">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="HelpTableItemStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/weight_help_table_border</item>
+    </style>
+
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".cycle.CycleHelpActivity">
+
+    <include
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_h"
+            android:layout_marginEnd="@dimen/layout_margin_h"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:text="@string/cycle_terminology" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/menstruation" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/menstruation_content" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/period" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/period_content" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/fertile_window" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/fertile_window_content" />
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:text="@string/cycle_important_information" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/cycle_meaning" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/cycle_content" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/cycle_length_meaning" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/cycle_length_content" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/cycle_phases" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/cycle_phases_content" />
+
+            <TextView
+                style="@style/CycleHelpStyle.TitleStyle"
+                android:text="@string/cycle_predictions" />
+
+            <TextView
+                style="@style/CycleHelpStyle.SubTitleStyle"
+                android:text="@string/period_predictions" />
+
+            <TextView
+                style="@style/CycleHelpStyle"
+                android:text="@string/period_predictions_content"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
